@@ -10,6 +10,12 @@ class Signup extends React.Component {
     }
   }
 
+  handleInput(type) {
+    return(e) => {
+      this.setState({ [type]: e.target.value });
+    };
+  }
+
   render() {
     return (
     <div></div>
