@@ -7,7 +7,9 @@ class Signup extends React.Component {
       username: "",
       email: "",
       password: "",
-    }
+    };
+
+    this.handleSubmit = this.handleInput.bind(this); 
   }
 
   handleInput(type) {
@@ -23,7 +25,27 @@ class Signup extends React.Component {
 
   render() {
     return (
-    <div></div>
+    <div className="session-form">
+      <h2>Sign Up</h2>
+      <form>
+        <label>Username:
+          <input type="text" 
+          value={this.state.username}
+          onChange={this.handleInput("username")}/>
+        </label>
+        <label>Email:
+          <input type="text" 
+          value={this.state.email}
+          onChange={this.handleInput("email")}/>
+          </label>
+        <label>Password:
+          <input type="password" 
+          value={this.state.password}
+          onChange={this.handleInput("username")}/>
+        </label>
+        <button onClick={this.handleSubmit}>Sign Up</button>
+      </form>
+    </div> 
     );
   }
 };
