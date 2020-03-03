@@ -6,7 +6,10 @@ import SignupContainer from "./session/signup_container";
 const App = () => (
   <div>
     <header>
-      <h1>Beamergram</h1>
+      <Link to="/" className="header-link">
+        <h1>Beamergram</h1>
+      </Link>
+      <GreetingContainer />
     </header>
     <Route path="/signup" component={SignupContainer} />
   </div>
