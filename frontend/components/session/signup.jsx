@@ -16,6 +16,11 @@ class Signup extends React.Component {
     };
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createNewUser(this.state)
+  }
+
   render() {
     return (
     <div></div>
