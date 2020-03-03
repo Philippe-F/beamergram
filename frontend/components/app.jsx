@@ -1,6 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom"; 
 import SignupContainer from "./session/signup_container"; 
+import GreetingContainer from "./greeting/greeting_container";
 
 
 const App = () => (
