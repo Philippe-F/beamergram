@@ -4,18 +4,18 @@
 #
 #  id              :integer(8)      not null, primary key
 #  email           :string          not null
-#  first_name      :string          not null
-#  last_name       :string          not null
 #  username        :string          not null
 #  password_digest :string          not null
 #  session_token   :string          not null
 #  created_at      :datetime        not null
 #  updated_at      :datetime        not null
+#  full_name       :string          not null
 #
 
 class User < ApplicationRecord
-  validates :email, :password_digest, presence: true, uniqueness: true
-    validates :session_token, presence: true 
+
+    validates :email, :username, presence: true, uniqueness: true
+    validates :full_name, :session_token, :password_digest, presence: true 
     validates :password, length: { minimum: 6, allow_nil: true }  
     after_initialize :ensure_session_token!
     attr_reader :password 
@@ -45,6 +45,4 @@ class User < ApplicationRecord
         self.session_token ||= SecureRandom.urlsafe_base64 
     end 
 end
-
-
 
