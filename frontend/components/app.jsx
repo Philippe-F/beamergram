@@ -1,6 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom"; 
-import SignupContainer from "./session/signup_container"; 
+import SignUpContainer from "./session/signup_container"; 
+import LogInContainer from './session/login_container';
 import GreetingContainer from "./greeting/greeting_container";
 
 
@@ -12,7 +13,8 @@ const App = () => (
       </Link>
       <GreetingContainer />
     </header>
-    <Route path="/signup" component={SignupContainer} />
+    <Route path="/login" component={LogInContainer} />
+    <Route path="/signup" component={SignUpContainer} />
   </div>
 );
 
