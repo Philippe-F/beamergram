@@ -9,7 +9,7 @@ import GreetingContainer from "./greeting/greeting_container";
 const App = () => (
   <div>
     <header>
-        <h1>Beamergram</h1>
+      <h1>Beamergram</h1>
       <GreetingContainer />
     </header>
     <AuthRoute exact path="/login" component={LogInContainer} />
