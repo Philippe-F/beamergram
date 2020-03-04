@@ -12,8 +12,8 @@ const App = () => (
         <h1>Beamergram</h1>
       <GreetingContainer />
     </header>
-    <Route path="/login" component={LogInContainer} />
-    <Route path="/signup" component={SignUpContainer} />
+    <AuthRoute exact path="/login" component={LogInContainer} />
+    <AuthRoute exact path="/signup" component={SignUpContainer} />
   </div>
 );
 
