@@ -45,64 +45,99 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <body>
-      <div className="session-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Beamergram!
-          <br />
-          Please {this.props.formType} or {this.props.navLink}
-          {this.renderErrors()}
-          <div className="session-form-container">
-            <div className="email-container">
-              <label className="session-form-label">Email:
-              <input
-                  type="text"
-                  value={this.state.email}
-                  onChange={this.update("email")}
-                  className="session-input"
-                /> 
-              </label>
-            </div> 
-            <div className="fullname-container">
-            <label className="session-form-label">Full Name:
-              <input
-                  type="text"
-                  value={this.state.fullname}
-                  onChange={this.update("fullname")}
-                  className="session-input"
-                />
-              </label>
+      <>
+        <div className="session-form-container">
+          <h1 className="logo">Beamergram</h1>
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+
+            <div className="welcome-message-container">
+              <p>Sign up to the see finest <br/>
+                <strong>Bavarian Motor Works!</strong></p>
             </div>
-            <div className="username-container">
-              <label className="session-form-label">Username:
-                <input type="text"
-                  value={this.state.username}
-                  onChange={this.update("username")}
-                  className="session-input"
-                />
-              </label>
+            {/* Welcome to Beamergram!
+            <br />
+            Please {this.props.formType} or {this.props.navLink}
+            {this.renderErrors()} */}
+            <div className="form-fields">
+              <div className="email-container">
+                <label className="session-form-label">
+                <input
+                    type="text"
+                    value={this.state.email}
+                    onChange={this.update("email")}
+                    placeholder="Email"
+                    size="40"
+                    className="session-input"
+                  /> 
+                </label>
+              </div> 
+              <div className="fullname-container">
+              <label className="session-form-label">
+                <input
+                    type="text"
+                    value={this.state.fullname}
+                    onChange={this.update("fullname")}
+                    placeholder="Full Name"
+                    size="40"
+                    className="session-input"
+                  />
+                </label>
+              </div>
+              <div className="username-container">
+                <label className="session-form-label">
+                  <input type="text"
+                    value={this.state.username}
+                    onChange={this.update("username")}
+                    placeholder="Username"
+                    size="40"
+                    className="session-input"
+                  />
+                </label>
+              </div>
+              <div className="password-container">
+                <label className="session-form-label">
+                  <input type="password"
+                    value={this.state.password}
+                    onChange={this.update("password")}
+                    placeholder="Password"
+                    size="40"
+                    className="session-input"
+                  />
+                </label>
+              </div>
             </div>
-            <div className="password-container">
-              <label className="session-form-label">Password:
-                <input type="password"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                  className="session-input"
-                />
-              </label>
-            </div>
+          </form>
+
+          <div className="button-container">
             <div className="submit-button-container">
-              <input className="session-submit" type="submit" value={this.props.formType} />
+              <input className="session-submit"
+                type="submit"
+                value={this.props.formType}
+                size="40"
+              />
+            </div>
+            <div className="demo-submit-container">
+              <button className="demo-submit" 
+              onClick={this.handleDemo}>Demo Login
+              </button>
             </div>
           </div>
-        </form>
-        <div className="demo-submit-container">
-          <button className="demo-submit" onClick={this.handleDemo}>Demo Login</button>
+
+          <div className="TOS-container">
+            <p>By signing up, you agree to our <br/>
+              <strong>Terms, Data Policy</strong> and <strong>Cookies <br/> 
+                Policy.</strong></p>
+          </div>
+
         </div>
-      </div>
-      </body>
+
+        <div className="footer-container">
+          <p>Have an account? {this.props.navLink} </p>
+        </div>
+      </>
     );
   }
+
 }
 
 export default SessionForm;

@@ -1,6 +1,45 @@
+body {
+  background-color: whitesmoke;
+  margin: 0;
+}
+
+.main-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .logo {
-  color: red;
-  background-color: green;
+  color: black;
+  background-color: transparent;
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Cookie', cursive;
+}
+
+.welcome-message-container {
+  color: gray;
+}
+
+.login-form-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-fields > div {
+  padding: 3px;
+}
+
+.session-input {
+  height: 35px;
+  font-size: 13px;
+  border-radius: 3px;
+  border-style: solid;
+  border-color: rgb(212, 212, 212);
+  border-width: thin;
 }
 
 .login-signup {
@@ -9,20 +48,78 @@
 }
 
 .session-form-container {
-  background-color: yellow;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 30px;
+  border-radius: 3px;
+  border-color: rgb(212, 212, 212);
 }
 
-body {
-  background-color: whitesmoke;
+.submit-button-container {
+  display: flex;
+  justify-content: center;
 }
 
 .session-submit {
-  color: orange;
-  background-color: orchid;
+  width: 250px;
+  height: 25px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 3px;
+  border-style: solid;
+}
+
+.button-container {
+  padding-top: 10px;
+}
+
+.button-container > div {
+  padding-bottom: 3px;
 }
 
 .demo-submit {
-  color:  teal;
-  background-color: yellowgreen;
+  width: 250px;
+  height: 25px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 3px;
+  border-style: solid;
 }
 
+.demo-submit-container {
+  display: flex;
+  justify-content: center;
+}
+
+.session-submit {
+  color: white;
+  background-color: #3897f0;
+}
+
+.demo-submit {
+  color: white;
+  background-color: #3897f0;
+}
+
+.TOS-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: grey;
+}
+
+.footer-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 20px;
+  padding-left: 81px;
+  padding-right: 78px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border-radius: 3px;
+  border-color: rgb(212, 212, 212);
+}

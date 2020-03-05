@@ -7,9 +7,8 @@ import GreetingContainer from "./greeting/greeting_container";
 
 
 const App = () => (
-  <div>
+  <div className="main-page"> 
     <header>
-      <h1 className="logo">Beamergram</h1>
       <GreetingContainer />
     </header>
     <AuthRoute exact path="/login" component={LogInContainer} />
