@@ -1,12 +1,14 @@
 import React from "react";
 
-class SignUpForm extends React.Component {
+
+class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
       password: "",
-      email: ""
+      email: "", 
+      fullname: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
@@ -56,6 +58,14 @@ class SignUpForm extends React.Component {
                 value={this.state.email}
                 onChange={this.update("email")}
               />
+              <br/>
+            </label>
+            <label className="session-form-label">Full Name:
+            <input
+                type="text"
+                value={this.state.fullname}
+                onChange={this.update("fullname")}
+              />
             </label>
             <br />
             <label>Username:
@@ -83,4 +93,4 @@ class SignUpForm extends React.Component {
   }
 }
 
-export default SignUpForm;
+export default SessionForm;

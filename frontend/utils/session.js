@@ -1,8 +1,14 @@
-export const postUser = (user) => (
+export const postUser = ({ username, password, email, fullname }) => (
   $.ajax({
     method: "POST",
     url: "/api/users",
-    data: { user },
+    data: { user: {  
+      username,
+      password,
+      email, 
+      full_name: fullname
+    } 
+  },
   })
 );
 
