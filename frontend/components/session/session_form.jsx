@@ -45,52 +45,62 @@ class SessionForm extends React.Component {
 
   render() {
     return (
+      <body>
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           Welcome to Beamergram!
           <br />
           Please {this.props.formType} or {this.props.navLink}
           {this.renderErrors()}
-          <div className="session-form">
-            <label className="session-form-label">Email:
-            <input
-                type="text"
-                value={this.state.email}
-                onChange={this.update("email")}
-                className="session-input"
-              />
-              <br/>
-            </label>
+          <div className="session-form-container">
+            <div className="email-container">
+              <label className="session-form-label">Email:
+              <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  className="session-input"
+                /> 
+              </label>
+            </div> 
+            <div className="fullname-container">
             <label className="session-form-label">Full Name:
-            <input
-                type="text"
-                value={this.state.fullname}
-                onChange={this.update("fullname")}
-                className="session-input"
-              />
-            </label>
-            <br />
-            <label className="session-form-label">Username:
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update("username")}
-                className="session-input"
-              />
-            </label>
-            <br />
-            <label className="session-form-label">Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                className="session-input"
-              />
-            </label>
-            <br />
-            <input className="session-submit" type="submit" value={this.props.formType} />
+              <input
+                  type="text"
+                  value={this.state.fullname}
+                  onChange={this.update("fullname")}
+                  className="session-input"
+                />
+              </label>
+            </div>
+            <div className="username-container">
+              <label className="session-form-label">Username:
+                <input type="text"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  className="session-input"
+                />
+              </label>
+            </div>
+            <div className="password-container">
+              <label className="session-form-label">Password:
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  className="session-input"
+                />
+              </label>
+            </div>
+            <div className="submit-button-container">
+              <input className="session-submit" type="submit" value={this.props.formType} />
+            </div>
           </div>
         </form>
-        <button className="demo-submit" onClick={this.handleDemo}>Demo Login</button>
+        <div className="demo-submit-container">
+          <button className="demo-submit" onClick={this.handleDemo}>Demo Login</button>
+        </div>
       </div>
+      </body>
     );
   }
 }
