@@ -45,18 +45,19 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
+      <div className="session-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           Welcome to Beamergram!
           <br />
           Please {this.props.formType} or {this.props.navLink}
           {this.renderErrors()}
-          <div className="login-form">
+          <div className="session-form">
             <label className="session-form-label">Email:
             <input
                 type="text"
                 value={this.state.email}
                 onChange={this.update("email")}
+                className="session-input"
               />
               <br/>
             </label>
@@ -65,29 +66,30 @@ class SessionForm extends React.Component {
                 type="text"
                 value={this.state.fullname}
                 onChange={this.update("fullname")}
+                className="session-input"
               />
             </label>
             <br />
-            <label>Username:
+            <label className="session-form-label">Username:
               <input type="text"
                 value={this.state.username}
                 onChange={this.update("username")}
-                className="login-input"
+                className="session-input"
               />
             </label>
             <br />
-            <label>Password:
+            <label className="session-form-label">Password:
               <input type="password"
                 value={this.state.password}
                 onChange={this.update("password")}
-                className="login-input"
+                className="session-input"
               />
             </label>
             <br />
             <input className="session-submit" type="submit" value={this.props.formType} />
           </div>
         </form>
-        <button onClick={this.handleDemo}>Demo Login</button>
+        <button className="demo-submit" onClick={this.handleDemo}>Demo Login</button>
       </div>
     );
   }
