@@ -46,88 +46,103 @@ class SessionForm extends React.Component {
   render() {
     return (
       <>
-        <div className="session-form-container">
-          <h1 className="logo">Beamergram</h1>
-          <form onSubmit={this.handleSubmit} className="signup-form-box">
-            <div className="errors-container">
-              {this.renderErrors()}
-            </div>
-            <div className="welcome-message-container"> 
-              <p>Sign up to see photos of the finest <br/>
-                <strong>Bavarian Motor Works!</strong></p>
-            </div>
-            <div className="form-fields">
-              { this.props.formType === "Sign up" ?
-              <div className="email-container">
-                <input
-                  type="text"
-                  value={this.state.email}
-                  onChange={this.update("email")}
-                  placeholder="Email"
-                  className="session-input"
-                /> 
-                </div> : null 
-              } 
-              {this.props.formType === "Sign up" ?
-              <div className="fullname-container">
-                <input
-                  type="text"
-                  value={this.state.fullname}
-                  onChange={this.update("fullname")}
-                  placeholder="Full Name"
-                  className="session-input"
-                />
-              </div> :null
-              }
-              <div className="username-container">
-                <input type="text"
-                  value={this.state.username}
-                  onChange={this.update("username")}
-                  placeholder="Username"
-                  // size="40"
-                  className="session-input"
-                />
-              </div>
-              <div className="password-container">
-                <input type="password"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                  placeholder="Password"
-                  className="session-input"
-                />
-              </div>
-            </div>
+        <div className="image-session-container">
+          <img src={window.splash_image} />
 
-            <div className="button-container">
-              <div className="submit-button-container">
-                <input className="session-submit"
-                  type="submit"
-                  value={this.props.formType}
-                />
+            <div className="signup-footer-container">
+              <div className="session-form-container">
+                <h1 className="logo">Beamergram</h1>
+                <form onSubmit={this.handleSubmit} className="signup-form-box">
+                  <div className="errors-container">
+                    {this.renderErrors()}
+                  </div>
+                    {this.props.formType === "Sign up" ?
+                  <div className="welcome-message-container"> 
+                    <p>Sign up to see photos of the finest <br/>
+                      <strong>Bavarian Motor Works!</strong></p>
+                  </div> : null
+                  }
+                  <div className="form-fields">
+                    { this.props.formType === "Sign up" ?
+                    <div className="email-container">
+                      <input
+                        type="text"
+                        value={this.state.email}
+                        onChange={this.update("email")}
+                        placeholder="Email"
+                        className="session-input"
+                      /> 
+                      </div> : null 
+                    } 
+                    {this.props.formType === "Sign up" ?
+                    <div className="fullname-container">
+                      <input
+                        type="text"
+                        value={this.state.fullname}
+                        onChange={this.update("fullname")}
+                        placeholder="Full Name"
+                        className="session-input"
+                      />
+                    </div> :null
+                    }
+                    <div className="username-container">
+                      <input type="text"
+                        value={this.state.username}
+                        onChange={this.update("username")}
+                        placeholder="Username"
+                        // size="40"
+                        className="session-input"
+                      />
+                    </div>
+                    <div className="password-container">
+                      <input type="password"
+                        value={this.state.password}
+                        onChange={this.update("password")}
+                        placeholder="Password"
+                        className="session-input"
+                      />
+                    </div>
+                  </div>
+                  <div className="button-container">
+                    <div className="submit-button-container">
+                      <input className="session-submit"
+                        type="submit"
+                        value={this.props.formType}
+                      />
+                    </div>
+                  </div>
+                </form>
+                <div className="demo-submit-container">
+                  <button className="demo-submit"
+                    onClick={this.handleDemo}>Demo Login
+                    </button>
+                </div>
+                <div className="TOS-container">
+                  <p>By signing up, you agree to our <br/>
+                    <strong>Terms, Data Policy</strong> and <strong>Cookies<br/> 
+                      Policy.</strong></p>
+                </div>
               </div>
-            </div>
-          </form>
-          <div className="demo-submit-container">
-            <button className="demo-submit"
-              onClick={this.handleDemo}>Demo Login
-              </button>
-          </div>
 
-          <div className="TOS-container">
-            <p>By signing up, you agree to our <br/>
-              <strong>Terms, Data Policy</strong> and <strong>Cookies <br/> 
-                Policy.</strong></p>
+            { this.props.formType === "Sign up" ?
+            <div className="footer-text-login">
+              <p>Have an account?{this.props.navLink}</p>
+            </div> : 
+            <div className="footer-text-signup">
+              <p>Don't have an account?{this.props.navLink}</p>
+            </div>
+            } 
           </div>
         </div>
-        { this.props.formType === "Sign up" ?
-        <div className="footer-container">
-          <p>Have an account? {this.props.navLink}</p>
-        </div> : null
-        }
+
+        <div className="dummy-links">
+          <p>ABOUT HELP PRESS API JOBS PRIVACY TERMS LOCATION TOP ACCOUNTS 
+          HASHTAGS LANGUAGE 
+          </p>
+        </div>
       </>
     );
   }
-
 }
 
 export default SessionForm;
