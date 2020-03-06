@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
           <form onSubmit={this.handleSubmit} className="login-form-box">
 
             <div className="welcome-message-container">
-              <p>Sign up to the see finest <br/>
+              <p>Sign up to see photos of the finest <br/>
                 <strong>Bavarian Motor Works!</strong></p>
             </div>
             {/* Welcome to Beamergram!
@@ -59,51 +59,51 @@ class SessionForm extends React.Component {
             Please {this.props.formType} or {this.props.navLink}
             {this.renderErrors()} */}
             <div className="form-fields">
+
+              { this.props.formType === "Sign up" ?
               <div className="email-container">
-                <label className="session-form-label">
                 <input
-                    type="text"
-                    value={this.state.email}
-                    onChange={this.update("email")}
-                    placeholder="Email"
-                    size="40"
-                    className="session-input"
-                  /> 
-                </label>
-              </div> 
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                  size="40"
+                  className="session-input"
+                /> 
+                </div> : null 
+              } 
+
               <div className="fullname-container">
-              <label className="session-form-label">
                 <input
-                    type="text"
-                    value={this.state.fullname}
-                    onChange={this.update("fullname")}
-                    placeholder="Full Name"
-                    size="40"
-                    className="session-input"
-                  />
-                </label>
+                  type="text"
+                  value={this.state.fullname}
+                  onChange={this.update("fullname")}
+                  placeholder="Full Name"
+                  size="40"
+                  className="session-input"
+                />
               </div>
+
+
               <div className="username-container">
-                <label className="session-form-label">
-                  <input type="text"
-                    value={this.state.username}
-                    onChange={this.update("username")}
-                    placeholder="Username"
-                    size="40"
-                    className="session-input"
-                  />
-                </label>
+                <input type="text"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  placeholder="Username"
+                  size="40"
+                  className="session-input"
+                />
               </div>
+
+
               <div className="password-container">
-                <label className="session-form-label">
-                  <input type="password"
-                    value={this.state.password}
-                    onChange={this.update("password")}
-                    placeholder="Password"
-                    size="40"
-                    className="session-input"
-                  />
-                </label>
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                  size="40"
+                  className="session-input"
+                />
               </div>
             </div>
           </form>
@@ -131,9 +131,11 @@ class SessionForm extends React.Component {
 
         </div>
 
+        { this.props.formType === "Sign up" ?
         <div className="footer-container">
-          <p>Have an account? {this.props.navLink} </p>
-        </div>
+          <p>Have an account? {this.props.navLink}</p>
+        </div> : null
+        }
       </>
     );
   }
