@@ -10,6 +10,7 @@
 #  updated_at :datetime        not null
 #
 class Post < ApplicationRecord
+  validates :caption, presence: true 
 
   belongs_to :user,
   foreign_key: :user_id,
