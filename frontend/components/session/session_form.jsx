@@ -49,12 +49,9 @@ class SessionForm extends React.Component {
         <div className="session-form-container">
           <h1 className="logo">Beamergram</h1>
           <form onSubmit={this.handleSubmit} className="signup-form-box">
-
             <div className="errors-container">
               {this.renderErrors()}
             </div>
-
-
             <div className="welcome-message-container"> 
               <p>Sign up to see photos of the finest <br/>
                 <strong>Bavarian Motor Works!</strong></p>
@@ -67,7 +64,6 @@ class SessionForm extends React.Component {
                   value={this.state.email}
                   onChange={this.update("email")}
                   placeholder="Email"
-                  size="40"
                   className="session-input"
                 /> 
                 </div> : null 
@@ -78,7 +74,6 @@ class SessionForm extends React.Component {
                   value={this.state.fullname}
                   onChange={this.update("fullname")}
                   placeholder="Full Name"
-                  size="40"
                   className="session-input"
                 />
               </div>
@@ -87,7 +82,7 @@ class SessionForm extends React.Component {
                   value={this.state.username}
                   onChange={this.update("username")}
                   placeholder="Username"
-                  size="40"
+                  // size="40"
                   className="session-input"
                 />
               </div>
@@ -96,7 +91,6 @@ class SessionForm extends React.Component {
                   value={this.state.password}
                   onChange={this.update("password")}
                   placeholder="Password"
-                  size="40"
                   className="session-input"
                 />
               </div>
@@ -107,13 +101,10 @@ class SessionForm extends React.Component {
                 <input className="session-submit"
                   type="submit"
                   value={this.props.formType}
-                  size="40"
                 />
               </div>
-       
             </div>
           </form>
-          
           <div className="demo-submit-container">
             <button className="demo-submit"
               onClick={this.handleDemo}>Demo Login
