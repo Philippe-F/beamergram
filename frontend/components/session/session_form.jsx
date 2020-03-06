@@ -68,6 +68,7 @@ class SessionForm extends React.Component {
                 /> 
                 </div> : null 
               } 
+              {this.props.formType === "Sign up" ?
               <div className="fullname-container">
                 <input
                   type="text"
@@ -76,7 +77,8 @@ class SessionForm extends React.Component {
                   placeholder="Full Name"
                   className="session-input"
                 />
-              </div>
+              </div> :null
+              }
               <div className="username-container">
                 <input type="text"
                   value={this.state.username}
