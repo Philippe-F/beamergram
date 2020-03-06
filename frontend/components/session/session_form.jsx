@@ -54,10 +54,7 @@ class SessionForm extends React.Component {
               <p>Sign up to see photos of the finest <br/>
                 <strong>Bavarian Motor Works!</strong></p>
             </div>
-            {/* Welcome to Beamergram!
-            <br />
-            Please {this.props.formType} or {this.props.navLink}
-            {this.renderErrors()} */}
+
             <div className="form-fields">
 
               { this.props.formType === "Sign up" ?
