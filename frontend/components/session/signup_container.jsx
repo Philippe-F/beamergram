@@ -11,7 +11,7 @@ const mapStateToProps = ({ errors }) => {
     navLink: <Link to="/login">Log in</Link>,
   };
 };
-
+ 
 const mapDispatchToProps = (dispatch) => {
   return {
     processForm: (user) => dispatch(signup(user)),

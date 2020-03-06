@@ -49,7 +49,13 @@ class SessionForm extends React.Component {
         <div className="session-form-container">
           <h1 className="logo">Beamergram</h1>
           <form onSubmit={this.handleSubmit} className="signup-form-box">
-            <div className="welcome-message-container">
+
+            <div className="errors-container">
+              {this.renderErrors()}
+            </div>
+
+
+            <div className="welcome-message-container"> 
               <p>Sign up to see photos of the finest <br/>
                 <strong>Bavarian Motor Works!</strong></p>
             </div>
@@ -95,21 +101,25 @@ class SessionForm extends React.Component {
                 />
               </div>
             </div>
-          </form>
-          <div className="button-container">
-            <div className="submit-button-container">
-              <input className="session-submit"
-                type="submit"
-                value={this.props.formType}
-                size="40"
-              />
+
+            <div className="button-container">
+              <div className="submit-button-container">
+                <input className="session-submit"
+                  type="submit"
+                  value={this.props.formType}
+                  size="40"
+                />
+              </div>
+       
             </div>
-            <div className="demo-submit-container">
-              <button className="demo-submit" 
+          </form>
+          
+          <div className="demo-submit-container">
+            <button className="demo-submit"
               onClick={this.handleDemo}>Demo Login
               </button>
-            </div>
           </div>
+
           <div className="TOS-container">
             <p>By signing up, you agree to our <br/>
               <strong>Terms, Data Policy</strong> and <strong>Cookies <br/> 
