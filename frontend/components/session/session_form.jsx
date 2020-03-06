@@ -48,15 +48,12 @@ class SessionForm extends React.Component {
       <>
         <div className="session-form-container">
           <h1 className="logo">Beamergram</h1>
-          <form onSubmit={this.handleSubmit} className="login-form-box">
-
+          <form onSubmit={this.handleSubmit} className="signup-form-box">
             <div className="welcome-message-container">
               <p>Sign up to see photos of the finest <br/>
                 <strong>Bavarian Motor Works!</strong></p>
             </div>
-
             <div className="form-fields">
-
               { this.props.formType === "Sign up" ?
               <div className="email-container">
                 <input
@@ -69,7 +66,6 @@ class SessionForm extends React.Component {
                 /> 
                 </div> : null 
               } 
-
               <div className="fullname-container">
                 <input
                   type="text"
@@ -80,8 +76,6 @@ class SessionForm extends React.Component {
                   className="session-input"
                 />
               </div>
-
-
               <div className="username-container">
                 <input type="text"
                   value={this.state.username}
@@ -91,8 +85,6 @@ class SessionForm extends React.Component {
                   className="session-input"
                 />
               </div>
-
-
               <div className="password-container">
                 <input type="password"
                   value={this.state.password}
@@ -104,7 +96,6 @@ class SessionForm extends React.Component {
               </div>
             </div>
           </form>
-
           <div className="button-container">
             <div className="submit-button-container">
               <input className="session-submit"
@@ -119,15 +110,12 @@ class SessionForm extends React.Component {
               </button>
             </div>
           </div>
-
           <div className="TOS-container">
             <p>By signing up, you agree to our <br/>
               <strong>Terms, Data Policy</strong> and <strong>Cookies <br/> 
                 Policy.</strong></p>
           </div>
-
         </div>
-
         { this.props.formType === "Sign up" ?
         <div className="footer-container">
           <p>Have an account? {this.props.navLink}</p>
