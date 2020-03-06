@@ -20,6 +20,11 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token!
     attr_reader :password 
 
+    has_many :posts,
+    foreign_key: :user_id,
+    primary_key: :id,
+    class_name: :Post
+
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username) 
         user && user.valid_password?(password) ? user : nil 
