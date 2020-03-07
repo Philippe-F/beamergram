@@ -1,5 +1,4 @@
 import * as PostAPIUtil from "../utils/post_util"; 
-import { receiveErrors } from "./session_action";
 
 export const RECEIVE_ALL_POSTS = "RECEIVE_ALL_POSTS";
 export const RECEIVE_POST = "RECEIVE_POST";
@@ -45,7 +44,7 @@ export const showPost = (post) => (dispatch) => (
   PostAPIUtil.showPost(post).then(post => (
     dispatch(receivePost(post))
   ), err => (
-    dispatch(receiveErrors(err.responseJSON))
+    dispatch(receivePostErrors(err.responseJSON))
   ))
 );
 
