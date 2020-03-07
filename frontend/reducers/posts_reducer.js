@@ -2,7 +2,6 @@ import {
   RECEIVE_ALL_POSTS,
   RECEIVE_POST,
   DELETE_POST,
-  deletePost
 } from "../actions/post_actions";
 
 const postsReducer = (state = {}, action) => {

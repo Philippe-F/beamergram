@@ -59,7 +59,5 @@ export const updatePost = (post) => (dispatch) => (
 export const deletePost = () => (dispatch) => (
   PostAPIUtil.destroyPost().then(() => (
     dispatch(deletePost())
-  ), err => (
-    dispatch(receivePostErrors(err.responseJSON))
   ))
 );
