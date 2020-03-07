@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end 
 
   def show
-    @post = current_user.posts.find_by(id: params[:id]) 
+    @post = Posts.find_by(id: params[:id]) 
 
     if @post 
       render "/api/{current_user.id}/posts/@post.id"
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   end 
 
   def update
-    @post = current_user.posts.find(id: params[:id]) 
+    @post = Posts.find(id: params[:id]) 
     @post.update_attributes(post_params) 
 
     if @post.save
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   end 
 
   def destroy 
-    @post = current_user.posts.find(id: params[:id]) 
+    @post = Posts.find(id: params[:id]) 
     @post.destroy
   end 
 
