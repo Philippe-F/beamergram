@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class API::PostsController < ApplicationController
 
   def index 
     @posts = Post.all 
@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   end 
 
   def show
+
     @post = Posts.find_by(id: params[:id]) 
 
     if @post 
