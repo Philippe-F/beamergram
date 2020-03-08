@@ -6,16 +6,16 @@ import { createPost } from "../../actions/post_actions";
 const mapStateToProps = (state) => {
   const post = {
     caption = ""
-  }
+  };
 
   return {
     post: post,
     formType: "create post",
-  }
-} 
+  };
+}
 
 const mapDispatchToProps = (dispatch) => ({
-  createPost: () => dispatch(createPost()),
-})
+  action: () => dispatch(createPost()),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostForm);
