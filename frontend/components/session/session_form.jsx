@@ -56,12 +56,14 @@ class SessionForm extends React.Component {
                   <div className="errors-container">
                     {this.renderErrors()}
                   </div>
+
                     {this.props.formType === "Sign up" ?
                   <div className="welcome-message-container"> 
                     <p>Sign up to see photos of the finest <br/>
                       <strong>Bavarian Motor Works!</strong></p>
                   </div> : null
                   }
+
                   <div className="form-fields">
                     { this.props.formType === "Sign up" ?
                     <div className="email-container">
@@ -74,6 +76,7 @@ class SessionForm extends React.Component {
                       /> 
                       </div> : null 
                     } 
+
                     {this.props.formType === "Sign up" ?
                     <div className="fullname-container">
                       <input
@@ -85,6 +88,7 @@ class SessionForm extends React.Component {
                       />
                     </div> :null
                     }
+
                     <div className="username-container">
                       <input type="text"
                         value={this.state.username}
@@ -94,6 +98,7 @@ class SessionForm extends React.Component {
                         className="session-input"
                       />
                     </div>
+
                     <div className="password-container">
                       <input type="password"
                         value={this.state.password}
@@ -103,6 +108,7 @@ class SessionForm extends React.Component {
                       />
                     </div>
                   </div>
+
                   <div className="button-container">
                     <div className="submit-button-container">
                       <input className="session-submit"
@@ -112,11 +118,13 @@ class SessionForm extends React.Component {
                     </div>
                   </div>
                 </form>
+
                 <div className="demo-submit-container">
                   <button className="demo-submit"
                     onClick={this.handleDemo}>Demo Login
                     </button>
                 </div>
+                
                 <div className="TOS-container">
                   <p>By signing up, you agree to our <br/>
                     <strong>Terms, Data Policy</strong> and <strong>Cookies<br/> 
@@ -135,11 +143,24 @@ class SessionForm extends React.Component {
           </div>
         </div>
 
-        <div className="dummy-links">
-          <p>ABOUT HELP PRESS API JOBS PRIVACY TERMS LOCATION TOP ACCOUNTS 
-          HASHTAGS LANGUAGE 
-          </p>
-        </div>
+        <footer>
+          <div className="dummy-links-div">
+            <ul>
+              <li>ABOUT</li>
+              <li>HELP </li>
+              <li>PRESS</li>
+              <li>API</li>
+              <li>JOBS</li>
+              <li>PRIVACY</li>
+              <li>TERMS</li>
+              <li>LOCATION</li>
+              <li>TOP</li>
+              <li>ACCOUNTS</li>
+              <li>HASHTAGS</li>
+              <li>LANGUAGE</li>
+            </ul>
+          </div>
+        </footer>
       </>
     );
   }

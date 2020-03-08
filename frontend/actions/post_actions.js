@@ -15,8 +15,9 @@ export const receivePost = (post) => ({
   post: post,
 });
 
-export const deletePost = () => ({
+export const deletePost = (postId) => ({
   type: DELETE_POST, 
+  postId: postId
 })
 
 export const receivePostErrors = (errors) => ({
@@ -56,8 +57,8 @@ export const updatePost = (post) => (dispatch) => (
   ))
 );
 
-export const deletePost = () => (dispatch) => (
-  PostAPIUtil.destroyPost().then(() => (
-    dispatch(deletePost())
+export const destroyPost = (postId) => (dispatch) => (
+  PostAPIUtil.destroyPost(postId).then(() => (
+    dispatch(deletePost(postId))
   ))
 );

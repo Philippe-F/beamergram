@@ -180,13 +180,21 @@ img {
   cursor: pointer;
 }
 
-.dummy-links {
+.dummy-links-div {
+  margin-top: 60px;
   display: flex;
-  justify-content: left;
-  flex-direction: row;
-  margin-top: 70px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color:rgb(35, 35, 110);
+}
+
+ul {
+  display: flex;
   font-size: 12px;
-  font-weight: bold;
+  font-family: 'proxima-nova', sans-serif;
+  align-self: center;
+}
+
+li {
+  padding: 13px;
+  color: #003569;
+  font-weight: 700;
+  list-style-type: none;
 }

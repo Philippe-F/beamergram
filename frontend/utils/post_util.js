@@ -7,14 +7,11 @@ export const allPosts = () => (
   })
 );
 
-export const createPost = ({ caption }) => (
+export const createPost = (post) => (
   $.ajax({
     method: "POST",
     url: `/api/posts`,
-    data: {post:{
-      caption,
-    }
-  },
+    data: { post } 
   })
 );
 
@@ -29,7 +26,7 @@ export const updatePost = (post) => (
   $.ajax({
     method: "PATCH",
     url: `/api/posts/${post.id}`,
-    data: { event },
+    data: { post },
   })
 );
 
