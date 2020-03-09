@@ -3,9 +3,10 @@ import React from "react";
 class PostForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props.post;
+    this.state = this.props.post;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
+    this.handleFileSubmit = this.handleFileSubmit.bind(this);
   }
 
   update(field) {
@@ -25,12 +26,22 @@ class PostForm extends React.Component {
     this.setState({photoFile: e.currentTarget.files[0]});
   };
 
+  handleFileSubmit(e) {
+    e.preventDefault();
+    // create a new formData object
+    const formData = new FormData();
+    // append data into the formData object
+    formData.append("post[caption]", this.state.caption);
+    formData.append("post[photo]", this.state.photoFile);
+    this.props.action(formData) 
+  };
+
   render() {
     return (
       <div>
         <h2>{this.props.formType}</h2>
 
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleFileSubmit}>
           <label>Caption
             <input type="textarea" value={this.state.caption} onChange={this.update("caption")}/>
           </label>

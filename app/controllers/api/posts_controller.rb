@@ -1,4 +1,4 @@
-class API::PostsController < ApplicationController
+class Api::PostsController < ApplicationController
 
   def index 
     @posts = Post.all 
@@ -44,6 +44,6 @@ class API::PostsController < ApplicationController
 
   private 
   def post_params
-    params.require(:post).permit(:caption)
+    params.require(:post).permit(:caption, :photo)
   end 
 end

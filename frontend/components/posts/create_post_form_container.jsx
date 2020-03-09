@@ -16,7 +16,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  action: () => dispatch(createPost()),
+  action: (post) => dispatch(createPost(post)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostForm);

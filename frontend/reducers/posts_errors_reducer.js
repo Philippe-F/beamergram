@@ -11,8 +11,8 @@ export default (state = [], action) => {
       return action.errors;
     case RECEIVE_ALL_POSTS:
       return [];
-      case RECEIVE_POST:
-        return [];
+    case RECEIVE_POST:
+      return [];
     default: 
       return state;
   }

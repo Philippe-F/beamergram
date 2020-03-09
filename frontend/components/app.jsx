@@ -19,7 +19,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LogInContainer} />
       <Route path="/posts/explore" component={PostIndexContainer} /> 
       <Route path="/posts/show/:postId" component={PostShowContainer} />  
-      <Route path="/posts/create" component={CreatePostFormContainer} />  
+      <Route path="/posts/new" component={CreatePostFormContainer} />  
       <Route path="/posts/:postId/edit" component={EditPostFormContainer} />  
     </Switch>
   </div>

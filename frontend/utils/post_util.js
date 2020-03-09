@@ -7,13 +7,18 @@ export const allPosts = () => (
   })
 );
 
-export const createPost = (post) => (
-  $.ajax({
+export const createPost = (post) => {
+  return $.ajax({
     method: "POST",
     url: `/api/posts`,
-    data: { post } 
+    data: post,
+    // Let ajax method know that we should not be messing with the the
+    // formData object to format it for rails backend 
+    // (let rails do all the work)
+    contentType: false,
+    processData: false
   })
-);
+};
 
 export const showPost = (postId) => (
   $.ajax({

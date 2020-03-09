@@ -20,10 +20,12 @@ export const deletePost = (postId) => ({
   postId: postId
 })
 
-export const receivePostErrors = (errors) => ({
-  type: RECEIVE_POST_ERRORS,
-  errors: errors, 
-})
+export const receivePostErrors = (errors) => {
+  return {
+    type: RECEIVE_POST_ERRORS,
+    errors: errors, 
+  }
+}
 
 export const allPosts = () => (dispatch) => (
   PostAPIUtil.allPosts().then(posts => (
@@ -36,9 +38,12 @@ export const allPosts = () => (dispatch) => (
 export const createPost = (post) => (dispatch) => (
   PostAPIUtil.createPost(post).then(post => (
     dispatch(receivePost(post))
-  ), err => (
-    dispatch(receivePostErrors(err.responseJSON))
-  ))
+  ), err => {
+    return (
+      dispatch(receivePostErrors(err.responseJSON))
+    )
+  } 
+  )
 ); 
 
 export const showPost = (post) => (dispatch) => (
