@@ -2,14 +2,14 @@ class API::PostsController < ApplicationController
 
   def index 
     @posts = Post.all 
-    render "/api/posts"
+    render :index
   end 
 
   def create
     @post = Post.new(post_params)
 
     if @post.save
-      render "api/posts/show"
+      render :show
     else 
       render json: @post.errors.full_messages, status: 422
     end 
@@ -20,7 +20,7 @@ class API::PostsController < ApplicationController
     @post = Posts.find_by(id: params[:id]) 
 
     if @post 
-      render "/api/{current_user.id}/posts/@post.id"
+      render :show
     else 
       render json: @post.errors.full_messages, status: 422
     end 
@@ -28,10 +28,9 @@ class API::PostsController < ApplicationController
 
   def update
     @post = Posts.find(id: params[:id]) 
-    @post.update_attributes(post_params) 
 
-    if @post.save
-      render "/api/posts/@post.id"
+    if @post.update(post_params) 
+      render :show
     else 
       render json: @post.errors.full_messages, status: 422
     end 

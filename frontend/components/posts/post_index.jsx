@@ -1,5 +1,5 @@
 import React from "react";
-import { deletePost } from "../../actions/post_actions";
+import PostIndexItem from "./post_index_item";
 
 class PostIndex extends React.Component {
   constructor(props) {
