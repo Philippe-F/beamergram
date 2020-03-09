@@ -8,5 +8,4 @@ export default combineReducers({
   session: sessionReducer,
   entities: entitiesReducer,
   errors: errorsReducer,
-  posts: postsReducer
 })

@@ -6,7 +6,7 @@ import { allPosts, destroyPost } from "../../actions/post_actions"
 
 const mapStateToProps = (state) => {
   return { 
-    posts: Object.values(state.posts),
+    posts: Object.values(state.entities.posts),
   };
 };
 

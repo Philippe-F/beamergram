@@ -16,7 +16,7 @@ class PostShow extends React.Component {
     return (
       <ul>
         <li>{post.caption}</li>
-        <Link to={`/`}>Post Index</Link>
+        <Link to={`/posts/explore`}>Post Index</Link>
       </ul>
     )
   }

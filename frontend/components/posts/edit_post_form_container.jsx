@@ -5,7 +5,7 @@ import { updatePost, showPost } from "../../actions/post_actions";
 
 const mapStateToProps = (state, ownProps) => {
   const postId = ownProps.match.params.postId;
-  const post = state.posts[postId];
+  const post = state.entities.posts[postId];
 
   return {
     postId: postId,
@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch) => ({
 class EditPostForm extends React.Component {
 
   componentDidMount() {
-    this.props.showPost(this.props.match.params.postId);
+    this.props.getPost(this.props.match.params.postId);
   };
 
   render() {
