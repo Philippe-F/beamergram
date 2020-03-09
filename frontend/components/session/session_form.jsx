@@ -31,6 +31,10 @@ class SessionForm extends React.Component {
     this.props.signIn(demo);
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  };
+
   renderErrors() {
     return (
       <ul>
@@ -145,7 +149,7 @@ class SessionForm extends React.Component {
 
         <footer>
           <div className="dummy-links-div">
-            <ul>
+            <ul className="dummy-links-ul">
               <li>ABOUT</li>
               <li>HELP </li>
               <li>PRESS</li>

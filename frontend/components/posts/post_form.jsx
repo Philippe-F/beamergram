@@ -23,7 +23,15 @@ class PostForm extends React.Component {
   };
 
   handleFile(e) {
-    this.setState({photoFile: e.currentTarget.files[0]});
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ photoFile: file, photoUrl: fileReader.result});
+    }
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   };
 
   handleFileSubmit(e) {

@@ -7,6 +7,7 @@ const mapStateToProps = (state) => {
   const post = {
     caption: "",
     photoFile: null,
+    photoUrl: null,
   };
 
   return {

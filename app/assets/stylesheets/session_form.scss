@@ -185,14 +185,14 @@ img {
   display: flex;
 }
 
-ul {
+.dummy-links-ul {
   display: flex;
   font-size: 12px;
   font-family: 'proxima-nova', sans-serif;
   align-self: center;
 }
 
-li {
+.dummy-links-ul > li {
   padding: 13px;
   color: #003569;
   font-weight: 700;
