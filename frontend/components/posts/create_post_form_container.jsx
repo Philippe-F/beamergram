@@ -5,7 +5,8 @@ import { createPost } from "../../actions/post_actions";
 
 const mapStateToProps = (state) => {
   const post = {
-    caption: ""
+    caption: "",
+    photoFile: null,
   };
 
   return {

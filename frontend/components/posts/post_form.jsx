@@ -5,6 +5,7 @@ class PostForm extends React.Component {
     super(props);
     this.state = props.post;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   update(field) {
@@ -18,7 +19,11 @@ class PostForm extends React.Component {
     // handleSubmit is called on the window so we must bind
     event.preventDefault();
     this.props.action(this.state);
-  }
+  };
+
+  handleFile(e) {
+    this.setState({photoFile: e.currentTarget.files[0]});
+  };
 
   render() {
     return (
@@ -29,6 +34,8 @@ class PostForm extends React.Component {
           <label>Caption
             <input type="textarea" value={this.state.caption} onChange={this.update("caption")}/>
           </label>
+          <input type="file" 
+          onChange={this.handleFile}/>
           <button type="submit" value={this.props.formType} /> 
         </form>
       </div>
