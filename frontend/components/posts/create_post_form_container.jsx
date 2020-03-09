@@ -5,7 +5,7 @@ import { createPost } from "../../actions/post_actions";
 
 const mapStateToProps = (state) => {
   const post = {
-    caption = ""
+    caption: ""
   };
 
   return {
