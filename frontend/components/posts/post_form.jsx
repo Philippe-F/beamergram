@@ -45,6 +45,7 @@ class PostForm extends React.Component {
   };
 
   render() {
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null
     return (
       <div>
         <h2>{this.props.formType}</h2>
@@ -55,6 +56,8 @@ class PostForm extends React.Component {
           </label>
           <input type="file" 
           onChange={this.handleFile}/>
+          <h3>Image Preview</h3>
+            {preview} 
           <button type="submit" value={this.props.formType} /> 
         </form>
       </div>
