@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -45,20 +46,24 @@ class PostForm extends React.Component {
   };
 
   render() {
-    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null
+    const preview = this.state.photoUrl ? 
+    <img src={this.state.photoUrl} /> : null
+
     return (
       <div>
         <h2>{this.props.formType}</h2>
 
         <form onSubmit={this.handleFileSubmit}>
           <label>Caption
-            <input type="textarea" value={this.state.caption} onChange={this.update("caption")}/>
+            <input type="textarea" value={this.state.caption} 
+            onChange={this.update("caption")}/>
           </label>
           <input type="file" 
           onChange={this.handleFile}/>
           <h3>Image Preview</h3>
             {preview} 
-    <button type="submit" value={this.props.formType}>{this.props.formType}</button> 
+          <button type="submit" value={this.props.formType}>
+      {this.props.formType}</button> 
         </form>
       </div>
     )
