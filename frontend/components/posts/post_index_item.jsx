@@ -6,6 +6,7 @@ const PostIndexItem = (props) => (
   <li>
     <Link to={`/posts/${props.post.id}/show`}>Show</Link> 
     <Link to={`/posts/${props.post.id}/edit`}>Edit</Link> 
+    <img src={props.photo} /> 
     <button onClick={() => props.delete(props.post.id)}>
       Remove Post</button>
   </li>

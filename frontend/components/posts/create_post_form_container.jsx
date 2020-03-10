@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
   return {
     post: post,
-    formType: "create post",
+    formType: "Create Post",
   };
 }
 

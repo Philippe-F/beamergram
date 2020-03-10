@@ -58,7 +58,7 @@ class PostForm extends React.Component {
           onChange={this.handleFile}/>
           <h3>Image Preview</h3>
             {preview} 
-          <button type="submit" value={this.props.formType} /> 
+    <button type="submit" value={this.props.formType}>{this.props.formType}</button> 
         </form>
       </div>
     )

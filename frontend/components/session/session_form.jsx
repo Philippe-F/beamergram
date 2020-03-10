@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
     return (
       <>
         <div className="image-session-container">
-          <img src={window.splash_image} />
+          <img className="splash-image" src={window.splash_image} />
 
             <div className="signup-footer-container">
               <div className="session-form-container">

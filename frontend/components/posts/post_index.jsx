@@ -13,7 +13,8 @@ class PostIndex extends React.Component {
   render() {
     const posts = this.props.posts.map((post) => {
       return (
-        <PostIndexItem key={post.id} post={post} delete={this.props.deletePost}/>
+        <PostIndexItem key={post.id} post={post} delete={this.props.deletePost} 
+        photo={post.photoUrl}/>
       )
     })
 
