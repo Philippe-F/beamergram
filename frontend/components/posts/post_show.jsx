@@ -17,6 +17,7 @@ class PostShow extends React.Component {
       <ul>
         <li>{post.caption}</li>
         <Link to={`/posts/explore`}>Post Index</Link> 
+        <img src={post.photoUrl} />
       </ul>
     )
   }
