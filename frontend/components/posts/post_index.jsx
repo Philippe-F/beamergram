@@ -19,7 +19,7 @@ class PostIndex extends React.Component {
         photoUrl={post.photoUrl} caption={post.caption}/>
       )
     })
-
+ 
     return (
 
       <div className="webpage">

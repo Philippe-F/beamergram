@@ -8,7 +8,7 @@ const PostIndexItem = (props) => (
       <div className="post-header-info">
         <div className="profile-photo-container">
           <a href="#/">
-            <img className="profileImage" src={window.profileImage} />
+            <img className="profileImage" src={window.profileImage} /> {/*CHANGE*/}
           </a>
         </div>
         <div className="user-info">
