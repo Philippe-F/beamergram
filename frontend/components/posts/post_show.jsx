@@ -35,6 +35,7 @@ class PostShow extends React.Component {
             <div className="post-header">
               <div className="post-header-info">
                 <div className="profile-photo-container">
+
                   <a href="#/">
                     <img className="profileImage" src={window.profileImage} /> {/*CHANGE*/}
                   </a>
@@ -44,7 +45,8 @@ class PostShow extends React.Component {
                     <div className="post-username">{post.username}</div>
                   </a>
                 </div>
-              </div>
+              </div> 
+              <Link to={`/posts/${post.id}/edit`}><img className="show" src={window.showIcon} /></Link>
             </div>
             <div className="photoUrl">
               <img src={post.photoUrl} />
@@ -69,59 +71,11 @@ class PostShow extends React.Component {
               <a>Post</a>
             </div>
           </div>
-
-
-
-
-
-
-
-
         </div>
       </div>
-
     )
   }
 }
 
-
-{/* <ul>
-  <li>{post.caption}</li>
-  <Link to={`/posts/explore`}>Post Index</Link>
-  <img src={post.photoUrl} />
-</ul> */}
-
-{/* <div className="page-background">
-  <div className="show-post">
-    <div className="post-container">
-      <div className="post-header">
-        <a href="#/">{this.props.post.username}</a>
-      </div>
-      <div className="show-img">
-        <img src={post.photoUrl} />
-      </div>
-      <div>
-        <div className="post-icons-container">
-          <img className="like-icon" src={window.likeIcon} />
-          <a href="#/">
-            <img className="comment-icon" src={window.commentIcon} />
-          </a>
-          <div className="like-count">0 likes</div>
-        </div>
-      </div>
-      <div className="comments-container">
-        <div className="post-caption">
-          <p>{post.caption}</p>
-        </div>
-      </div>
-      <div className="comment-field">
-        <input type="textarea" placeholder="Add a Comment..." />
-        <a>Post</a>
-      </div>
-    </div>
-
-  </div>
-
-</div> */}
 
 export default PostShow; 

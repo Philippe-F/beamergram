@@ -11,7 +11,7 @@ class PostIndex extends React.Component {
     this.handleNavBarLogo = this.handleNavBarLogo.bind(this);
     this.openModal = this.openModal.bind(this); 
     this.closeModal = this.closeModal.bind(this);
-  };
+  }; 
 
   componentDidMount() {
     this.props.allPosts();   
