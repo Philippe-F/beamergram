@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   const post = state.entities.posts[postId];
 
   return {
-    post: post, 
+    post: post,
   }
 };
 

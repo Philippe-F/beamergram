@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -53,6 +53,7 @@ class PostForm extends React.Component {
       <div>
         <h2>{this.props.formType}</h2>
 
+        
         <form onSubmit={this.handleFileSubmit}>
           <label>Caption
             <input type="textarea" value={this.state.caption} 
@@ -62,8 +63,7 @@ class PostForm extends React.Component {
           onChange={this.handleFile}/>
           <h3>Image Preview</h3>
             {preview} 
-          <button type="submit" value={this.props.formType}>
-      {this.props.formType}</button> 
+          <button type="submit" value={this.props.formType}>{this.props.formType}</button> 
         </form>
       </div>
     )
