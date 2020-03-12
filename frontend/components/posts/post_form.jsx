@@ -50,21 +50,45 @@ class PostForm extends React.Component {
     <img src={this.state.photoUrl} /> : null
 
     return (
-      <div>
-        <h2>{this.props.formType}</h2>
-
-        
-        <form onSubmit={this.handleFileSubmit}>
-          <label>Caption
-            <input type="textarea" value={this.state.caption} 
-            onChange={this.update("caption")}/>
-          </label>
-          <input type="file" 
-          onChange={this.handleFile}/>
-          <h3>Image Preview</h3>
-            {preview} 
-          <button type="submit" value={this.props.formType}>{this.props.formType}</button> 
-        </form>
+      <div className="webpage">
+        <div className="feed">
+          <div className="navBar">
+            <div className="navBarLeft">
+              <a href="#/">
+                <img className="icon" src={window.icon} />
+              </a>
+              <div className="verticalLine"></div>
+              <button onClick={this.handleNavBarLogo}><h3>Beamergram</h3></button>
+            </div>
+            <div className="navBarRight">
+              <a href="#/">
+                <img className="profile" src={window.profileIcon} />
+              </a>
+              <button onClick={this.props.logout}><img className="logout" src={window.settingsIcon} /></button>
+            </div>
+          </div>
+        </div>
+        <div className="new-post-object">
+          <div className="create-form-header">
+            <h2 className="new-post-header">Upload an Image</h2>
+            <div>
+              <form onSubmit={this.handleFileSubmit}>
+                <div>
+                  <input type="file" onChange={this.handleFile} />
+                </div>
+                <div className="upload-preview">
+                </div>
+                <div>
+                  {preview} 
+                </div>
+                <div>
+                  <input className="caption-input" type="textarea" value={this.state.caption} placeholder="Caption" onChange={this.update("caption")} />
+                </div>
+                <button className="submit-button" type="submit" value={this.props.formType}>{this.props.formType}</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
