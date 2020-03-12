@@ -5,6 +5,16 @@
   flex-direction: column;
 }
 
+button {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 .webpage {
   margin: 0;
   padding: 0;

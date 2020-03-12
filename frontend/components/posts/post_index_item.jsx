@@ -13,11 +13,11 @@ const PostIndexItem = (props) => (
         </div>
         <div className="user-info">
           <a href="#/">
-            <div className="post-username">philippelovesE30</div>
+            <div className="post-username">{props.username}</div>
           </a>
         </div>
         </div>
-        <img className="show" src={window.showIcon} />
+        <Link to={`/posts/${props.post.id}/show`}><img className="show" src={window.showIcon} /></Link>
       </div>
       <div className="photoUrl">
         <img src={props.photoUrl} />
