@@ -1,9 +1,9 @@
-.main-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
+// .main-page {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   flex-direction: column;
+// }
 
 button {
   background: none;
@@ -110,7 +110,7 @@ h3 {
   cursor: pointer;
 }
 
-.post-object {
+.page-background {
   background: white;
   border: 0.8px solid #d3d3d3d7;
   border-radius: 3px;
@@ -215,11 +215,3 @@ h3 {
   cursor: pointer;
   padding-right: 10px;
 }
-
-// .background {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-// }

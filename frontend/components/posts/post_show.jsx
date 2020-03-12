@@ -25,24 +25,58 @@ class PostShow extends React.Component {
               <button onClick={this.handleNavBarLogo}><h3>Beamergram</h3></button>
             </div>
             <div className="navBarRight">
-              <button onClick={this.handleNewPost}><img className="create" src={window.plusIcon} /></button>
               <a href="#/">
                 <img className="profile" src={window.profileIcon} />
               </a>
               <button onClick={this.props.logout}><img className="logout" src={window.settingsIcon} /></button>
             </div>
-            <div className="image-show">
-              <div className="post">    
-                <div className="post">
-                  <div className="post-title">
-                    <a href="#/users/1/profile">{}</a>
-
-                  </div>
+          </div>
+          <div className="post-object">
+            <div className="post-header">
+              <div className="post-header-info">
+                <div className="profile-photo-container">
+                  <a href="#/">
+                    <img className="profileImage" src={window.profileImage} /> {/*CHANGE*/}
+                  </a>
+                </div>
+                <div className="user-info">
+                  <a href="#/">
+                    <div className="post-username">{post.username}</div>
+                  </a>
                 </div>
               </div>
             </div>
+            <div className="photoUrl">
+              <img src={post.photoUrl} />
+            </div>
 
+            <div>
+              <div className="post-icons-container">
+                <img className="like-icon" src={window.likeIcon} />
+                <a href="#/">
+                  <img className="comment-icon" src={window.commentIcon} />
+                </a>
+                <div className="like-count">0 likes</div>
+              </div>
+            </div>
+            <div className="comments-container">
+              <div className="post-caption">
+                <p>{post.caption}</p>
+              </div>
+            </div>
+            <div className="comment-field">
+              <input type="textarea" placeholder="Add a Comment..." />
+              <a>Post</a>
+            </div>
           </div>
+
+
+
+
+
+
+
+
         </div>
       </div>
 
@@ -56,5 +90,38 @@ class PostShow extends React.Component {
   <Link to={`/posts/explore`}>Post Index</Link>
   <img src={post.photoUrl} />
 </ul> */}
+
+{/* <div className="page-background">
+  <div className="show-post">
+    <div className="post-container">
+      <div className="post-header">
+        <a href="#/">{this.props.post.username}</a>
+      </div>
+      <div className="show-img">
+        <img src={post.photoUrl} />
+      </div>
+      <div>
+        <div className="post-icons-container">
+          <img className="like-icon" src={window.likeIcon} />
+          <a href="#/">
+            <img className="comment-icon" src={window.commentIcon} />
+          </a>
+          <div className="like-count">0 likes</div>
+        </div>
+      </div>
+      <div className="comments-container">
+        <div className="post-caption">
+          <p>{post.caption}</p>
+        </div>
+      </div>
+      <div className="comment-field">
+        <input type="textarea" placeholder="Add a Comment..." />
+        <a>Post</a>
+      </div>
+    </div>
+
+  </div>
+
+</div> */}
 
 export default PostShow; 

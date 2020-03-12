@@ -47,7 +47,7 @@ class PostIndex extends React.Component {
  
     return (
       <>
-      <div className="background" onClick={this.closeModal}></div>
+      {/* <div className="background" onClick={this.closeModal}></div> */}
       <div className="webpage">
         <div className="feed">
           <div className="navBar">
@@ -59,14 +59,15 @@ class PostIndex extends React.Component {
               <button onClick={this.handleNavBarLogo}><h3>Beamergram</h3></button> 
              </div>
              <div className="navBarRight">
-              <button onClick={this.openModal}><img className="create" src={window.plusIcon}/></button> 
+              <button onClick={this.handleNewPost}><img className="create" src={window.plusIcon}/></button> 
                <a href="#/">
                  <img className="profile" src={window.profileIcon} />
                </a>
               <button onClick={this.props.logout}><img className="logout" src={window.settingsIcon}/></button>
              </div>
           </div>
-          {this.state.modal && <CreatePostFormContainer/>}
+          {/* {this.state.modal && <CreatePostFormContainer/>} */}
+          
         </div>
         <ul>
           {posts}
