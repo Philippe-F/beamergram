@@ -15,6 +15,10 @@ button {
 	outline: inherit;
 }
 
+a {
+  text-decoration: none;
+}
+
 .webpage {
   margin: 0;
   padding: 0;
@@ -148,7 +152,7 @@ h3 {
   margin-top: 5px;
 }
 
-.postUsername {
+.post-username {
   font-weight: 700;
 }
 
@@ -205,10 +209,10 @@ h3 {
 
 .comment-field > a {
   margin-top: 25px;
-  text-decoration: none;
   align-self: center;
   color: #459cee;
   justify-self: center;
   cursor: pointer;
   padding-right: 10px;
 }
+

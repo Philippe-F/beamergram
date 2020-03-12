@@ -38,7 +38,7 @@ const PostIndexItem = (props) => (
         </div>
       </div>
       <div className="comment-field">
-        <input type="text" placeholder="Add a Comment..." />
+        <input type="textarea" placeholder="Add a Comment..." />
         <a>Post</a>
       </div>
     </div>
