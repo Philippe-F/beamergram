@@ -60,8 +60,8 @@ export const showPost = (post) => (dispatch) => (
   )
 );
 
-export const updatePost = (post) => (dispatch) => (
-  PostAPIUtil.updatePost(post).then(updatedPost => (
+export const updatePost = (post, postId) => (dispatch) => (
+  PostAPIUtil.updatePost(post, postId).then(updatedPost => (
     dispatch(receivePost(updatedPost))
   ), err => {
     return (

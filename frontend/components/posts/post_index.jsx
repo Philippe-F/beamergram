@@ -9,8 +9,8 @@ class PostIndex extends React.Component {
     this.state = {modal:false}; 
     this.handleNewPost = this.handleNewPost.bind(this);
     this.handleNavBarLogo = this.handleNavBarLogo.bind(this);
-    this.openModal = this.openModal.bind(this); 
-    this.closeModal = this.closeModal.bind(this);
+    // this.openModal = this.openModal.bind(this); 
+    // this.closeModal = this.closeModal.bind(this);
   }; 
 
   componentDidMount() {
@@ -25,13 +25,13 @@ class PostIndex extends React.Component {
     this.props.history.push("/posts/explore");
   }
 
-  openModal() {
-    this.setState({modal:true})
-  }
+  // openModal() {
+  //   this.setState({modal:true})
+  // }
 
-  closeModal() {
-    this.setState({modal:false})
-  }
+  // closeModal() {
+  //   this.setState({modal:false})
+  // }
 
 
   render() {
@@ -56,7 +56,7 @@ class PostIndex extends React.Component {
                  <img className="icon" src={window.icon} />
               </a>
                <div className="verticalLine"></div>
-              <button onClick={this.handleNavBarLogo}><h3>Beamergram</h3></button> 
+              <button><h3>Beamergram</h3></button> 
              </div>
              <div className="navBarRight">
               <button onClick={this.handleNewPost}><img className="create" src={window.plusIcon}/></button> 

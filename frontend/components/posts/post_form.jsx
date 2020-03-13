@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -20,7 +20,6 @@ class PostForm extends React.Component {
 
     // handleSubmit is called on the window so we must bind
     event.preventDefault();
-    this.props.action(this.state);
   };
 
   handleFile(e) {
@@ -38,11 +37,16 @@ class PostForm extends React.Component {
   handleFileSubmit(e) {
     e.preventDefault();
     // create a new formData object
-    const formData = new FormData();
-    // append data into the formData object
-    formData.append("post[caption]", this.state.caption);
-    formData.append("post[photo]", this.state.photoFile);
-    this.props.action(formData) 
+    if (this.props.postId) {
+      this.props.action(this.state, this.props.postId)
+      .then(this.props.history.push("/posts/explore"))
+    } else {
+      const formData = new FormData();
+      // append data into the formData object
+      formData.append("post[caption]", this.state.caption);
+      formData.append("post[photo]", this.state.photoFile);
+      this.props.action(formData)
+    }
   };
 
   render() {
@@ -58,13 +62,15 @@ class PostForm extends React.Component {
                 <img className="icon" src={window.icon} />
               </a>
               <div className="verticalLine"></div>
-              <button onClick={this.handleNavBarLogo}><h3>Beamergram</h3></button>
+              <button onClick={this.handleNavBarLogo}>
+                <h3>Beamergram</h3></button>
             </div>
             <div className="navBarRight">
               <a href="#/">
                 <img className="profile" src={window.profileIcon} />
               </a>
-              <button onClick={this.props.logout}><img className="logout" src={window.settingsIcon} /></button>
+              <button onClick={this.props.logout}>
+                <img className="logout" src={window.settingsIcon} /></button>
             </div>
           </div>
         </div>
@@ -73,18 +79,26 @@ class PostForm extends React.Component {
             <h2 className="new-post-header">Upload an Image</h2>
             <div>
               <form onSubmit={this.handleFileSubmit}>
+                { this.props.formType === "Create Post" ?
                 <div>
                   <input type="file" onChange={this.handleFile} />
-                </div>
+                </div> : null 
+                }
                 <div className="upload-preview">
                 </div>
                 <div>
                   {preview} 
                 </div>
                 <div>
-                  <input className="caption-input" type="textarea" value={this.state.caption} placeholder="Caption" onChange={this.update("caption")} />
+                  <input className="caption-input" type="textarea" 
+                  value={this.state.caption} 
+                  placeholder="Caption" 
+                  onChange={this.update("caption")} />
                 </div>
-                <button className="submit-button" type="submit" value={this.props.formType}>{this.props.formType}</button>
+                <button className="submit-button" 
+                type="submit" 
+                value={this.props.formType}>
+                  {this.props.formType}</button>
               </form>
             </div>
           </div>

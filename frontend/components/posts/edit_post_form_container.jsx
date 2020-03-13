@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
   getPost: (postId) => dispatch(showPost(postId)),
-  action: (postId) => dispatch(updatePost(postId)),
+  action: (post, postId) => dispatch(updatePost(post, postId)),
 });
 
 
@@ -34,7 +34,8 @@ class EditPostForm extends React.Component {
       <PostForm
         action={action}
         formType={formType}
-        post={post} />
+        post={post}
+        postId={post.id}/>
     )
   };
 }

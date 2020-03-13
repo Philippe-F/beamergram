@@ -27,13 +27,14 @@ export const showPost = (postId) => (
   })
 );
 
-export const updatePost = (post) => (
-  $.ajax({
+export const updatePost = (post, postId) => {
+
+  return $.ajax({
     method: "PATCH",
-    url: `/api/posts/${post.id}`,
-    data: { post },
+    url: `/api/posts/${postId}`,
+    data: { post, "hello": "hello" },
   })
-);
+};
 
 export const destroyPost = (postId) => (
   $.ajax({
