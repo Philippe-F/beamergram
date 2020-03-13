@@ -46,6 +46,7 @@ class PostShow extends React.Component {
                   </a>
                 </div>
               </div> 
+              <button onClick={this.props.delete}>Remove</button>
               <Link to={`/posts/${post.id}/edit`}><img className="show" src={window.showIcon} /></Link>
             </div>
             <div className="photoUrl">
