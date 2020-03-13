@@ -44,7 +44,10 @@ class PostIndex extends React.Component {
         handlePostShow={this.handlePostShow}/> 
       )
     })
- 
+    
+    return (
+      <h2>Hello</h2> ) 
+      
     return (
       <>
       {/* <div className="background" onClick={this.closeModal}></div> */}
