@@ -13,7 +13,6 @@ import EditPostFormContainer from "./posts/edit_post_form_container";
 const App = () => (
   <div className="main-page"> 
   
-    {/* <GreetingContainer /> */}
     <Switch>
       <AuthRoute path="/signup" component={SignUpContainer} />
       <AuthRoute path="/login" component={LogInContainer} />
