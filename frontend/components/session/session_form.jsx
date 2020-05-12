@@ -150,18 +150,12 @@ class SessionForm extends React.Component {
         <footer>
           <div className="dummy-links-div">
             <ul className="dummy-links-ul">
-              <li>ABOUT</li>
-              <li>HELP </li>
-              <li>PRESS</li>
-              <li>API</li>
-              <li>JOBS</li>
-              <li>PRIVACY</li>
-              <li>TERMS</li>
-              <li>LOCATION</li>
-              <li>TOP</li>
-              <li>ACCOUNTS</li>
-              <li>HASHTAGS</li>
-              <li>LANGUAGE</li>
+              <li><a href="https://philippefonzin.dev/">PORTFOLIO</a></li>
+              <li><a href="https://github.com/Philippe-F">GITHUB</a></li>
+              <li><a href="https://angel.co/u/philippe-fonzin">ANGELLIST</a></li>
+              <li><a href="https://musicmaestro.herokuapp.com/#/">MUSIC MAESTRO</a></li>
+              <li><a href="https://watch-tower-1.herokuapp.com/">WATCH TOWER</a></li>
+              <li><a href="#">CSS TRICKS</a></li>
             </ul>
           </div>
         </footer>
