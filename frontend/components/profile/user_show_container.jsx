@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { fetchUser, deleteUser } from "../../actions/user_actions";
 import { logout } from "../../actions/session_action";
+import UserShow from "./user_show";
 
 const mapStateToProps = (state, ownProps) => {
   const profileId = ownProps.match.params.userId;
@@ -13,7 +14,6 @@ const mapStateToProps = (state, ownProps) => {
     currentUser,
     userPosts,
     userProfile,
-    followerIds,
   };
 }
 
