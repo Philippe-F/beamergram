@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import NavbarContainer from "../navbar/navbar_container";
 
 class PostShow extends React.Component {
   constructor(props) {
@@ -16,21 +17,7 @@ class PostShow extends React.Component {
     return (
       <div className="webpage">
         <div className="feed">
-          <div className="navBar">
-            <div className="navBarLeft">
-              <a href="#/">
-                <img className="icon" src={window.icon} />
-              </a>
-              <div className="verticalLine"></div>
-              <button onClick={this.handleNavBarLogo}><h3>Beamergram</h3></button>
-            </div>
-            <div className="navBarRight">
-              <a href="#/">
-                <img className="profile" src={window.profileIcon} />
-              </a>
-              <button onClick={this.props.logout}><img className="logout" src={window.settingsIcon} /></button>
-            </div>
-          </div>
+          <NavbarContainer />
           <div className="post-object">
             <div className="post-header">
               <div className="post-header-info">
