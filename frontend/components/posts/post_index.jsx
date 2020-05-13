@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router";
 import PostIndexItem from "./post_index_item";
+import NavbarContainer from "../navbar/navbar_container";
 import CreatePostFormContainer from "./create_post_form_container";
 
 class PostIndex extends React.Component {
@@ -52,7 +53,7 @@ class PostIndex extends React.Component {
       {/* <div className="background" onClick={this.closeModal}></div> */}
       <div className="webpage">
         <div className="feed">
-          <div className="navBar">
+          {/* <div className="navBar">
             <div className="navBarLeft">
                <a href="#/">
                  <img className="icon" src={window.icon} />
@@ -67,9 +68,9 @@ class PostIndex extends React.Component {
                </a>
               <button onClick={this.props.logout}><img className="logout" src={window.settingsIcon}/></button>
              </div>
-          </div>
+          </div> */}
           {/* {this.state.modal && <CreatePostFormContainer/>} */}
-          
+          <NavbarContainer />
         </div>
         <ul>
           {posts}

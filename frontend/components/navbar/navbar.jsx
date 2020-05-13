@@ -4,6 +4,8 @@ import { withRouter } from "react-router";
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
+    this.handleNewPost = this.handleNewPost.bind(this);
+    this.handleNavBarLogo = this.handleNavBarLogo.bind(this);
   }
 
   handleNewPost() {
