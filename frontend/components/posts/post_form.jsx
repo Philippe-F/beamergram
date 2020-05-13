@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import NavbarContainer from "../navbar/navbar_container"; 
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -56,7 +56,8 @@ class PostForm extends React.Component {
     return (
       <div className="webpage">
         <div className="feed">
-          <div className="navBar">
+          <NavbarContainer />
+          {/* <div className="navBar">
             <div className="navBarLeft">
               <a href="#/">
                 <img className="icon" src={window.icon} />
@@ -72,7 +73,7 @@ class PostForm extends React.Component {
               <button onClick={this.props.logout}>
                 <img className="logout" src={window.settingsIcon} /></button>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="new-post-object">
           <div className="create-form-header">
