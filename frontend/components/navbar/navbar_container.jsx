@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_action";
+import Navbar from "./navbar"; 
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -7,4 +8,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }; 
 
-export default connect(null, mapDispatchToProps)(PostIndex); 
+export default connect(null, mapDispatchToProps)(Navbar); 
