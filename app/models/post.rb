@@ -12,7 +12,8 @@
 class Post < ApplicationRecord
   validates :caption, presence: true 
 
-  has_one_attached :photo
+  has_one_attached :photo,
+  dependent: :destroy
 
   belongs_to :user,
   foreign_key: :user_id,
