@@ -57,23 +57,6 @@ class PostForm extends React.Component {
       <div className="webpage">
         <div className="feed">
           <NavbarContainer />
-          {/* <div className="navBar">
-            <div className="navBarLeft">
-              <a href="#/">
-                <img className="icon" src={window.icon} />
-              </a>
-              <div className="verticalLine"></div>
-              <button onClick={this.handleNavBarLogo}>
-                <h3>Beamergram</h3></button>
-            </div>
-            <div className="navBarRight">
-              <a href="#/">
-                <img className="profile" src={window.profileIcon} />
-              </a>
-              <button onClick={this.props.logout}>
-                <img className="logout" src={window.settingsIcon} /></button>
-            </div>
-          </div> */}
         </div>
         <div className="new-post-object">
           <div className="create-form-header">
