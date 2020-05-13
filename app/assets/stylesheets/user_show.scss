@@ -1,0 +1,99 @@
+.profile-head {
+  display: flex;
+  min-width: 850px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.profile-container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fafafa;
+  font-family: "Roboto", sans-serif;
+  width: 950px;
+}
+
+.profile-photo-index-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-width: 900px;
+  padding-left: 20px;
+}
+
+.profile-head-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-button {
+  background-color: transparent;
+  border: 1px solid #dbdbdb;
+  color: #262626;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 10px;
+  padding: 5px 5px;
+  border-radius: 5px;
+  width: 80px;
+  height: 30px;
+  align-content: center;
+  outline: none;
+}
+
+.profile-button:hover {
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
+}
+
+.profile-pic {
+  border: 1px solid #dbdbdb;
+  background-color: darkgrey;
+  border-radius: 70px;
+  width: 125px;
+  height: 125px;
+}
+
+.profile-username {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.profile-username {
+  display: flex;
+  justify-content: space-around;
+}
+
+.profile-head-right {
+  width: 700px;
+}
+
+.cursor:hover {
+  cursor: pointer;
+}
+
+.profile-left {
+  width: 10%;
+}
+
+.profile-webpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  position: relative;
+}

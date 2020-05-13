@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import NavbarContainer from "../navbar/navbar_container";
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -36,8 +37,56 @@ class UserShow extends React.Component {
       return <h2>User Does Not Exist</h2>;
     }
 
+    const {
+      username,
+      id,
+    } = this.props.userProfile;
+
     return (
-      <div>User Profile Page</div>
+      <div>
+        
+        <div className="profile-webpage">
+          <NavbarContainer />
+          <div className="profile-left"></div>
+          <div className="profile-container">
+            <div className="profile-head">
+              <div className="profile-pic-container">
+                <img className="profile-pic" 
+                // src={} 
+                />
+              </div>
+              <div className="profile-head-right">
+                <div className="profile-username">
+                  <h1>{username}</h1>
+                  {id === this.props.currentUser.id ? (
+                    <div className="profile-head-buttons">
+                      <button className="profile-button" 
+                      // onClick={}
+                      >
+                        Log Out
+                      </button>
+                      <button
+                        className="profile-button"
+                        // onClick={}
+                      >
+                        Edit Profile
+                      </button>
+                      <button
+                        className="profile-button"
+                        // onClick={}
+                      >
+                        Add Photo
+                      </button>
+                    </div>
+                  ) : (
+                    <div>nope.</div>
+                    )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     )
   }
 }
