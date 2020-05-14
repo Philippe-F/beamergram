@@ -13,6 +13,7 @@ class UserShow extends React.Component {
     this.handleDeleteUser = this.handleDeleteUser.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
+    this.handleNewPost = this.handleNewPost.bind(this);
   }
 
   componentDidMount() {
@@ -50,6 +51,11 @@ class UserShow extends React.Component {
       this.props.fetchUser(this.props.userProfile.id) });
   }
 
+  handleNewPost(event) {
+    event.preventDefault();
+    this.props.history.push(`/posts/new`);
+  }
+
   render() {
     if (!this.props.userProfile) {
       return <h2>User Does Not Exist</h2>;
@@ -57,8 +63,6 @@ class UserShow extends React.Component {
 
     const {
       username,
-      followerIds,
-      followingIds,
       photoUrl,
       id,
     } = this.props.userProfile;
@@ -94,7 +98,7 @@ class UserShow extends React.Component {
                       </button>
                       <button
                         className="profile-button"
-                        // onClick={}
+                        onClick={this.handleNewPost}
                       >
                         Add Photo
                       </button>

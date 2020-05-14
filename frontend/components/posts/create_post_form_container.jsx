@@ -4,6 +4,7 @@ import { createPost } from "../../actions/post_actions";
 
 
 const mapStateToProps = (state) => {
+  let currentUser = state.entities.users[state.session.id];
   const post = {
     caption: "",
     photoFile: null,
@@ -11,6 +12,7 @@ const mapStateToProps = (state) => {
   };
 
   return {
+    currentUser,
     post: post,
     formType: "Create Post",
   };

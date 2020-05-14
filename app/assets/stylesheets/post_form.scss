@@ -9,21 +9,15 @@
   margin-inline-end: 0px;
 }
 
-.upload-preview {
-  margin-bottom: 20px;
-  max-height: 500px;
-  overflow-y: hidden;
-  background-position: center;
-  position: relative;
-}
-
 .caption-input {
-  width: 100%;
   margin: 3px 0px;
-  padding: 10px 0px;
-  padding-left: 8px;
-  border-radius: 3px;
+  border-radius: 5px;
   box-sizing: border-box;
+  border-color: #d3d3d3d7;
+  height: 60px;
+  max-height: 60px;
+  max-width: 400px;
+  width: 400px;
 }
 
 .submit-button {
@@ -32,11 +26,25 @@
   width: 100%;
   border-radius: 3px;
   font-size: 15px;
-  cursor: pointer;
   padding-top: 6px;
   padding-bottom: 6px;
   margin-top: 6px;
   margin-bottom: 6px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 18px;
+}
+
+.submit-button:hover {
+  background-color:  rgb(127, 158, 190);
+  cursor: pointer;
+}
+
+.can {
+  background-color: #e61414;
+  margin-bottom: 50px;
+}
+
+.can:hover {
+  background-color: rgb(194, 138, 138);
+  cursor: pointer;
 }

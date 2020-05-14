@@ -8,6 +8,7 @@ class PostForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.handleFileSubmit = this.handleFileSubmit.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   update(field) {
@@ -49,9 +50,32 @@ class PostForm extends React.Component {
     }
   };
 
+  handleCancel(event) {
+    event.preventDefault();
+    this.props.history.push(`/users/${this.props.currentUser.id}`);
+  }
+
   render() {
-    const preview = this.state.photoUrl ? 
-    <img src={this.state.photoUrl} /> : null
+
+    let imagePreview;
+
+    if (this.state.photoUrl) {
+      imagePreview = (
+        <div className="preview-container">
+          <div className="img-container">
+            <img className="img-preview" src={this.state.photoUrl} />
+          </div>
+        </div>
+      );
+    } else {
+      imagePreview = (
+        <div className="preview-container">
+          <div className="preview-outline">
+
+          </div>
+        </div>
+      );
+    }
 
     return (
       <div className="webpage">
@@ -65,16 +89,14 @@ class PostForm extends React.Component {
               <form onSubmit={this.handleFileSubmit}>
                 { this.props.formType === "Create Post" ?
                 <div>
-                  <input type="file" onChange={this.handleFile} />
+                  <input className="new-file" type="file" onChange={this.handleFile} />
                 </div> : null 
                 }
-                <div className="upload-preview">
+                <div>
+                  {imagePreview} 
                 </div>
                 <div>
-                  {preview} 
-                </div>
-                <div>
-                  <input className="caption-input" type="textarea" 
+                  <textarea className="caption-input" 
                   value={this.state.caption} 
                   placeholder="Caption" 
                   onChange={this.update("caption")} />
@@ -82,7 +104,11 @@ class PostForm extends React.Component {
                 <button className="submit-button" 
                 type="submit" 
                 value={this.props.formType}>
-                  {this.props.formType}</button>
+                  {this.props.formType}
+                </button>
+                <button className="submit-button can" onClick={this.handleCancel}>
+                  Cancel
+                </button>
               </form>
             </div>
           </div>

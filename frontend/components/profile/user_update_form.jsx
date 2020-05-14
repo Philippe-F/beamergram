@@ -135,8 +135,7 @@ class UserUpdateForm extends React.Component {
                     Update Profile
                   </button>
                   
-                  <button
-                    className="cancel-button"
+                  <button className="cancel-button"
                     onClick={this.handleCancel}
                   >
                     Cancel
