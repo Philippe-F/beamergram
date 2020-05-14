@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_action";
-import { RECEIVE_FOLLOW, DELETE_FOLLOW } from "../actions/follow_action";
+import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from "../actions/follow_action";
 import {
   RECEIVE_USER,
   RECEIVE_ALL_USERS,
