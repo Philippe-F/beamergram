@@ -28,6 +28,26 @@ class User < ApplicationRecord
     primary_key: :id,
     class_name: :Post
 
+    has_many :user_follows, 
+    foreign_key: :user_id,
+    class_name: :Follows,
+    dependent: :destroy
+
+    has_many :user_followed,
+    foreign_key: :followed_user_id,
+    class_name: :Follows,
+    dependent: :destroy
+
+    has_many :followings,
+    through: :user_follows,
+    source: :follower,
+    dependent: :destroy
+
+    has_many :followers,
+    through: :user_followed,
+    source: :followed,
+    dependent: :destroy
+
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username) 
         user && user.valid_password?(password) ? user : nil 
