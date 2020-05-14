@@ -93,7 +93,7 @@ class SessionForm extends React.Component {
                     </div> :null
                     }
 
-                    <div className="username-container">
+                    <div className="session-username-container">
                       <input type="text"
                         value={this.state.username}
                         onChange={this.update("username")}

@@ -11,6 +11,8 @@ class UserShow extends React.Component {
     this.logout = this.props.logout;
     this.handleEditUser = this.handleEditUser.bind(this);
     this.handleDeleteUser = this.handleDeleteUser.bind(this);
+    this.handleFollow = this.handleFollow.bind(this);
+    this.handleUnfollow = this.handleUnfollow.bind(this);
   }
 
   componentDidMount() {
@@ -34,6 +36,20 @@ class UserShow extends React.Component {
     this.props.history.push(`/edit-profile`);
   }
 
+  handleFollow(event) {
+    event.preventDefault();
+    this.props.createFollow({ followed_user_id: this.props.userProfile.id })
+    .then(() => {
+      this.props.fetchUser(this.props.userProfile.id) });
+  }
+
+  handleUnfollow(event) {
+    event.preventDefault();
+    this.props.deleteFollow(this.props.userProfile.id)
+    .then(() => {
+      this.props.fetchUser(this.props.userProfile.id) });
+  }
+
   render() {
     if (!this.props.userProfile) {
       return <h2>User Does Not Exist</h2>;
@@ -41,13 +57,15 @@ class UserShow extends React.Component {
 
     const {
       username,
+      followerIds,
+      followingIds,
       photoUrl,
       id,
     } = this.props.userProfile;
 
+
     return (
       <div>
-        
         <div className="profile-webpage">
           <NavbarContainer />
           <div className="profile-left"></div>
@@ -64,7 +82,7 @@ class UserShow extends React.Component {
                   {id === this.props.currentUser.id ? (
                     <div className="profile-head-buttons">
                       <button className="profile-button" 
-                      // onClick={}
+                      onClick={this.logout}
                       >
                         Log Out
                       </button>
@@ -82,7 +100,12 @@ class UserShow extends React.Component {
                       </button>
                     </div>
                   ) : (
-                    <div>nope.</div>
+                    <button
+                      className="profile-button"
+                      onClick={this.handleFollow}
+                    >
+                      Follow
+                    </button>
                     )}
                 </div>
               </div>
