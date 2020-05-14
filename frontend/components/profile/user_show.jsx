@@ -53,7 +53,7 @@ class UserShow extends React.Component {
           <div className="profile-left"></div>
           <div className="profile-container">
             <div className="profile-head">
-              <div className="profile-pic-container">
+              <div className="profile-pic-wrapper">
                 <img className="profile-pic" 
                 src={photoUrl} 
                 />
