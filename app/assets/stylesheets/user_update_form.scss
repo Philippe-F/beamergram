@@ -1,0 +1,130 @@
+.update-webpage {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.update-form {
+    display: flex;
+    width: 720px;
+    justify-content: space-between;
+}
+
+.user-info-container {
+    width: 300px;
+    height: 450px;
+    display: flex;
+    border-radius: 5px;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #d3d3d3d7;;
+}
+
+.username-container, .profile-pic-container {
+    justify-content: space-evenly;
+    border-bottom: 1px solid #d3d3d3d7;
+    flex-direction: column;
+    display: flex;
+    background-color: #3897f0;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    color:white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.user-attributes {
+    height: 80%; 
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+.text {
+    font-size: 16px;
+    color: #1c81e0;
+    margin-bottom: 5px;
+}
+
+.update-bio {
+    height: 60px;
+    max-height: 60px;
+    max-width: 250px;
+    width: 250px;
+}
+
+.buttons-container {
+    height: 13%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: inherit;
+    flex-direction: row;
+}
+
+.cancel-button, .upload-button {
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-right: 10px;
+    padding: 5px;
+    width: 100px;
+    height: 30px;
+    align-content: center;
+}
+
+.img-container {
+    height: 100%;
+}
+
+.upload-button {
+    background-color: #3897f0;
+}
+
+.cancel-button {
+    background-color: #e61414;
+}
+
+.cancel-button:hover {
+    background-color: rgb(194, 138, 138);
+    cursor: pointer;
+}
+
+.upload-button:hover {
+    background-color:  rgb(127, 158, 190);
+    cursor: pointer;
+}
+
+.img-preview {
+    height: 350px;
+    width: 350px;
+    margin: 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.preview-container {
+    height: 450px;
+    width: 400px;
+    border: 1px solid #d3d3d3d7;;
+    border-radius: 5px;
+}
+
+.adjust {
+    margin-left: 12px;
+}

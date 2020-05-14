@@ -9,6 +9,8 @@ class UserShow extends React.Component {
     this.userPosts = this.props.userPosts;
     this.currentUser = this.props.currentUser;
     this.logout = this.props.logout;
+    this.handleEditUser = this.handleEditUser.bind(this);
+    this.handleDeleteUser = this.handleDeleteUser.bind(this);
   }
 
   componentDidMount() {
@@ -21,15 +23,15 @@ class UserShow extends React.Component {
     }
   }
 
-  handleDeleteUser(e) {
-    e.preventDefault();
+  handleDeleteUser(event) {
+    event.preventDefault();
     window.confirm("Are you sure you want to delete this account?") &&
       this.props.deleteUser(this.props.userProfile.id);
   }
 
-  handleEditUser(e) {
-    e.preventDefault();
-    this.props.history.push(`/edit_profile`);
+  handleEditUser(event) {
+    event.preventDefault();
+    this.props.history.push(`/edit-profile`);
   }
 
   render() {
@@ -39,6 +41,7 @@ class UserShow extends React.Component {
 
     const {
       username,
+      photoUrl,
       id,
     } = this.props.userProfile;
 
@@ -52,7 +55,7 @@ class UserShow extends React.Component {
             <div className="profile-head">
               <div className="profile-pic-container">
                 <img className="profile-pic" 
-                // src={} 
+                src={photoUrl} 
                 />
               </div>
               <div className="profile-head-right">
@@ -67,7 +70,7 @@ class UserShow extends React.Component {
                       </button>
                       <button
                         className="profile-button"
-                        // onClick={}
+                        onClick={this.handleEditUser}
                       >
                         Edit Profile
                       </button>
