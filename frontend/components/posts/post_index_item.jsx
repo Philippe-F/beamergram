@@ -20,7 +20,7 @@ const PostIndexItem = (props) => (
         <Link to={`/posts/${props.post.id}/show`}><img className="show" src={window.showIcon} /></Link>
       </div>
       <div className="photoUrl">
-        <img src={props.photoUrl} />
+      <img src={props.photoUrl} width="500" height="500"/>
       </div>
 
       <div>
@@ -42,22 +42,6 @@ const PostIndexItem = (props) => (
         <a>Post</a>
       </div>
     </div>
-
-
-
-
-
-
-
-
-
-  // <li>
-  //   <Link to={`/posts/${props.post.id}/show`}>Show</Link> 
-  //   <Link to={`/posts/${props.post.id}/edit`}>Edit</Link> 
-  //   <img src={props.photoUrl} /> 
-  //   <button onClick={() => props.delete(props.post.id)}>
-  //     Remove Post</button>
-  // </li>
 )
  
 export default PostIndexItem;
