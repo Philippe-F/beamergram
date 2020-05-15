@@ -62,11 +62,12 @@ class UserShow extends React.Component {
     }
 
     const {
+      followerIds,
+      followingIds,
       username,
       photoUrl,
       id,
     } = this.props.userProfile;
-
 
     return (
       <div>
@@ -83,7 +84,7 @@ class UserShow extends React.Component {
               <div className="profile-head-right">
                 <div className="profile-username">
                   <h1>{username}</h1>
-                  {id === this.props.currentUser.id ? (
+                  {id === this.props.currentUser ? (
                     <div className="profile-head-buttons">
                       <button className="profile-button" 
                       onClick={this.logout}
@@ -104,12 +105,25 @@ class UserShow extends React.Component {
                       </button>
                     </div>
                   ) : (
-                    <button
-                      className="profile-button"
-                      onClick={this.handleFollow}
-                    >
-                      Follow
-                    </button>
+                    <div>
+                    {this.props.userProfile.followerIds.includes(
+                      this.props.currentUser
+                    ) ? (
+                        <button
+                          className="profile-button"
+                          onClick={this.handleUnfollow}
+                        >
+                          Unfollow
+                        </button>
+                      ) : (
+                        <button
+                          className="profile-button"
+                          onClick={this.handleFollow}
+                        >
+                          Follow
+                        </button>
+                      )}
+                    </div>
                     )}
                 </div>
               </div>

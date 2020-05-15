@@ -1,8 +1,8 @@
 class Api::FollowsController < ApplicationController 
 
-  def index
-    @follows = Follow.all.where(user_id: params[:user_id])
-  end 
+  # def index
+  #   @follows = Follow.all.where(user_id: params[:user_id])
+  # end 
 
   def create 
     @follow = Follow.new(follow_params)
