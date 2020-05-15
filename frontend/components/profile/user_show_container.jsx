@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
   let userPosts = null;
   let followBool = false;
   let followerIds = null;
-  let currentUser = state.entities.users[state.session.id];
+  let currentUser = state.session.id;
 
 
   if (userProfile) {
@@ -19,8 +19,8 @@ const mapStateToProps = (state, ownProps) => {
       post => post.user_id === userProfile.id
     );
 
-    // (followerIds = userProfile.followerIds),
-    // (followBool = followerIds.includes(currentUser.id));
+    (followerIds = userProfile.followerIds),
+    (followBool = followerIds.includes(currentUser.id));
   }
 
   return {
