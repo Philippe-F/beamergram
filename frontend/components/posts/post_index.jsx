@@ -26,13 +26,13 @@ class PostIndex extends React.Component {
 
   render() {
     if (this.props.posts.length === 0) return null
-
+    
     const posts = this.props.posts.map((post) => {
       return (
         <PostIndexItem key={post.id} post={post} delete={this.props.deletePost} 
         photoUrl={post.photoUrl} caption={post.caption} username={post.username}
-        handlePostShow={this.handlePostShow} profileImage={this.props.currentUser.photoUrl}
-        currentUserId={this.props.currentUser.id}/> 
+        handlePostShow={this.handlePostShow} profileImage={post.profileImage}
+        currentUserId={post.user_id}/> 
       )
     })
     

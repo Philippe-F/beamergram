@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import PostIndex from "./post_index";
 import { allPosts, destroyPost } from "../../actions/post_actions"
 import { logout } from "../../actions/session_action";
+import { fetchUser } from "../../actions/user_actions";
 
  
 const mapStateToProps = (state) => {
