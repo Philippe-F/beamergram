@@ -7,12 +7,12 @@ const PostIndexItem = (props) => (
     <div className="post-header">
       <div className="post-header-info">
         <div className="profile-photo-container">
-          <a href="#/">
+          <a>
             <img className="profileImage" src={props.profileImage} />
           </a>
         </div>
         <div className="user-info">
-          <a href="#/">
+          <a href={`#/users/${props.currentUserId}`}>
             <div className="post-username">{props.username}</div>
           </a>
         </div>

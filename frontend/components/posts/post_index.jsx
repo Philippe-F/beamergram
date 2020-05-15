@@ -31,7 +31,8 @@ class PostIndex extends React.Component {
       return (
         <PostIndexItem key={post.id} post={post} delete={this.props.deletePost} 
         photoUrl={post.photoUrl} caption={post.caption} username={post.username}
-        handlePostShow={this.handlePostShow} profileImage={this.props.currentUser.photoUrl}/> 
+        handlePostShow={this.handlePostShow} profileImage={this.props.currentUser.photoUrl}
+        currentUserId={this.props.currentUser.id}/> 
       )
     })
     
