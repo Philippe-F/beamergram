@@ -17,12 +17,13 @@ const PostIndexItem = (props) => (
           </a>
         </div>
         </div>
-        <Link to={`/posts/${props.post.id}/show`}><img className="show" src={window.showIcon} /></Link>
+        {/* <Link to={`/posts/${props.post.id}/show`}><img className="show" src={window.showIcon} /></Link> */}
       </div>
-      <div className="photoUrl">
-      <img src={props.photoUrl} width="500" height="500"/>
-      </div>
-
+      <a href={`#/posts/${props.post.id}/show`}>
+        <div className="photoUrl">
+        <img src={props.photoUrl} width="500" height="500"/>
+        </div>
+      </a>
       <div>
         <div className="post-icons-container">
           <img className="like-icon" src={window.likeIcon} />
