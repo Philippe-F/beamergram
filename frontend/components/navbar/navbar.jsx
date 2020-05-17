@@ -28,7 +28,7 @@ class Navbar extends React.Component {
         </div>
         <div className="navBarRight">
           {/* <button onClick={this.handleNewPost}><img className="create" src={window.plusIcon} /></button> */}
-          <a href="#/">
+          <a href={`#/users/${this.props.currentUser.id}`}>
             <img className="profile" src={window.profileIcon} />
           </a>
           <button onClick={this.props.logout}><img className="logout" src={window.settingsIcon} /></button>
