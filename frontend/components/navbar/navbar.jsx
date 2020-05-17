@@ -19,15 +19,14 @@ class Navbar extends React.Component {
   render() {
     return (
       <div className="navBar">
-        <div className="navBarLeft">
-          <a href="#/">
-            <img className="icon" src={window.icon} />
-          </a>
-          <div className="verticalLine"></div>
-          <button><h3>Beamergram</h3></button>
-        </div>
+        <a href="#/">
+          <div className="navBarLeft">
+              <img className="icon" src={window.icon} />
+            <div className="verticalLine"></div>
+            <h3>Beamergram</h3>
+          </div>
+        </a>
         <div className="navBarRight">
-          {/* <button onClick={this.handleNewPost}><img className="create" src={window.plusIcon} /></button> */}
           <a href={`#/users/${this.props.currentUser.id}`}>
             <img className="profile" src={window.profileIcon} />
           </a>
