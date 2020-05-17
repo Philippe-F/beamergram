@@ -27,7 +27,7 @@ class Navbar extends React.Component {
           <button><h3>Beamergram</h3></button>
         </div>
         <div className="navBarRight">
-          <button onClick={this.handleNewPost}><img className="create" src={window.plusIcon} /></button>
+          {/* <button onClick={this.handleNewPost}><img className="create" src={window.plusIcon} /></button> */}
           <a href="#/">
             <img className="profile" src={window.profileIcon} />
           </a>
