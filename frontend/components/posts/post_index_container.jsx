@@ -4,6 +4,7 @@ import PostIndex from "./post_index";
 import { allPosts, destroyPost } from "../../actions/post_actions"
 import { logout } from "../../actions/session_action";
 import { fetchUser } from "../../actions/user_actions";
+import { showPost } from "../../actions/post_actions";
 import {
   createComment,
   fetchPostComments,
@@ -29,6 +30,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchPostComments: postId => dispatch(fetchPostComments(postId)),
     createComment: comment => dispatch(createComment(comment)),
     deleteComment: id => dispatch(deleteComment(id)),
+    showPost: id => dispatch(showPost(id))
   }
 }; 
 

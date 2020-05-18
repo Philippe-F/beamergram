@@ -6,7 +6,6 @@ import NavbarContainer from "../navbar/navbar_container";
 class PostIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {modal:false}; 
     this.handleNewPost = this.handleNewPost.bind(this);
     this.handleNavBarLogo = this.handleNavBarLogo.bind(this);
   }; 
@@ -31,12 +30,13 @@ class PostIndex extends React.Component {
       return (
         <PostIndexItem key={post.id} post={post} delete={this.props.deletePost} 
         photoUrl={post.photoUrl} caption={post.caption} username={post.username}
-        handlePostShow={this.handlePostShow} profileImage={post.profileImage}
-        currentUserId={post.user_id}/> 
+        profileImage={post.profileImage} currentUserId={post.user_id}
+        createComment={this.props.createComment} 
+        fetchPostComments={this.props.fetchPostComments} 
+        deleteComment={this.props.deleteComment}
+        showPost={this.props.showPost}/> 
       )
     })
-    
-
 
     return (
       <>
