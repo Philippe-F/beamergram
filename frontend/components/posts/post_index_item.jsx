@@ -35,11 +35,11 @@ class PostIndexItem extends React.Component {
     let post = this.props;
     let postComments = Object.values(this.props.post.comments).map(comment => {
       return (
-        <div key={comment.id} className="post-show-comment">
-          <Link className="feed-profile-link" to={`/users/${comment.user_id}`}>
+        <div key={comment.id}>
+          <Link to={`/users/${comment.user_id}`}>
             {comment.author}
           </Link>
-          <span className="comment-bo">&nbsp;{comment.body}</span>
+          <span>&nbsp;{comment.body}</span>
         </div>
       );
     });
