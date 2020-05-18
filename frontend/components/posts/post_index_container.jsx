@@ -4,6 +4,12 @@ import PostIndex from "./post_index";
 import { allPosts, destroyPost } from "../../actions/post_actions"
 import { logout } from "../../actions/session_action";
 import { fetchUser } from "../../actions/user_actions";
+import {
+  createComment,
+  fetchPostComments,
+  deleteComment,
+  clearErrors
+} from "../../actions/comment_actions";
 
  
 const mapStateToProps = (state) => {
@@ -20,6 +26,9 @@ const mapDispatchToProps = (dispatch) => {
     allPosts: () => dispatch(allPosts()), 
     deletePost: (postId) => dispatch(destroyPost(postId)),
     logout: () => dispatch(logout()),
+    fetchPostComments: postId => dispatch(fetchPostComments(postId)),
+    createComment: comment => dispatch(createComment(comment)),
+    deleteComment: id => dispatch(deleteComment(id)),
   }
 }; 
 
