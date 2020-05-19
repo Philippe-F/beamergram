@@ -30,11 +30,11 @@ class PostIndex extends React.Component {
       return (
         <PostIndexItem key={post.id} post={post} delete={this.props.deletePost} 
         photoUrl={post.photoUrl} caption={post.caption} username={post.username}
-        profileImage={post.profileImage} currentUserId={post.user_id}
-        createComment={this.props.createComment} 
+        profileImage={post.profileImage} postCreator={post.user_id}
+        createComment={this.props.createComment} currentUser={this.props.currentUser}
         fetchPostComments={this.props.fetchPostComments} 
-        deleteComment={this.props.deleteComment}
-        showPost={this.props.showPost}/> 
+        deleteComment={this.props.deleteComment} showPost={this.props.showPost} 
+        createLike={this.props.createLike} deleteLike={this.props.deleteLike}/> 
       )
     })
 

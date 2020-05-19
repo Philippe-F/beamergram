@@ -5,6 +5,7 @@ import { allPosts, destroyPost } from "../../actions/post_actions"
 import { logout } from "../../actions/session_action";
 import { fetchUser } from "../../actions/user_actions";
 import { showPost } from "../../actions/post_actions";
+import { createLike, deleteLike } from "../../actions/like_actions";
 import {
   createComment,
   fetchPostComments,
@@ -30,7 +31,9 @@ const mapDispatchToProps = (dispatch) => {
     fetchPostComments: postId => dispatch(fetchPostComments(postId)),
     createComment: comment => dispatch(createComment(comment)),
     deleteComment: id => dispatch(deleteComment(id)),
-    showPost: id => dispatch(showPost(id))
+    showPost: id => dispatch(showPost(id)),
+    createLike: id => dispatch(createLike(id)),
+    deleteLike: id => dispatch(deleteLike(id))
   }
 }; 
 

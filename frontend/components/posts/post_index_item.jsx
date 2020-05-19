@@ -6,10 +6,28 @@ class PostIndexItem extends React.Component {
     super(props);
 
     this.handleComment = this.handleComment.bind(this); 
+    this.handleLike = this.handleLike.bind(this); 
+    this.isLiked = this.isLiked.bind(this);
     this.state = {
       body: ""
     };
   }
+
+  isLiked() {
+    const posts = this.props.post.likes;
+
+    let mapped = posts.map(ele => {
+      return ele.user_id;
+    })
+
+    return mapped;
+  };
+
+  handleLike(event) {
+    event.preventDefault();
+    this.props.createLike({ post_id: this.props.post.id })
+    .then(() => this.props.showPost(this.props.post.id));
+  };
 
   handleComment(event) {
     event.preventDefault();
@@ -53,7 +71,7 @@ class PostIndexItem extends React.Component {
               </a>
             </div>
             <div className="user-info">
-              <a href={`#/users/${post.currentUserId}`}>
+              <a href={`#/users/${post.postCreator}`}>
                 <div className="post-username">{post.username}</div>
               </a>
             </div>
@@ -64,11 +82,14 @@ class PostIndexItem extends React.Component {
             <img src={post.photoUrl} width="500" height="500" />
           </div>
         </a>
-        <div>
-          <div className="post-icons-container">
-            <img className="like-icon" src={window.likeIcon} />
-            <div className="like-count">0 likes</div>
-          </div>
+        <div className="post-icons-container">
+          { this.isLiked().includes(this.props.currentUser.id) ? (
+            <img className="like-icon" src={window.fullLikeIcon} onClick={this.handleLike}/>
+          ) : (
+            <img className="like-icon" src={window.likeIcon} onClick={this.handleLike} />
+          )
+          }
+          <div className="like-count">{this.props.post.likes.length} likes</div>
         </div>
         <div className="comments-container">
           <div className="post-caption">

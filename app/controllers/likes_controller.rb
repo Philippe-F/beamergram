@@ -35,7 +35,7 @@ class Api::LikesController < ApplicationController
       render json: ["User's are only able to remove their own likes"], status: 422
     end
   end
-
+  
   private 
   def like_params 
     params.require(:like).permit(:post_id)
