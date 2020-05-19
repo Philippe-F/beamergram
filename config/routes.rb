@@ -10,9 +10,11 @@ Rails.application.routes.draw do
     resources :follows, only: [:create, :show, :destroy] 
     resources :posts, only: [:index, :create, :show, :update, :destroy] do 
       resources :comments, only: [:index]
+      resources :likes, only: [:index]
     end 
 
     resources :comments, only: [:create,:destroy,:show]
     resource :session, only: [:new, :create, :destroy]
+    resources :likes, only: [:create, :destroy, :show]
   end 
 end
