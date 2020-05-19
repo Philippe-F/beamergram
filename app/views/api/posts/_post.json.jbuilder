@@ -9,3 +9,7 @@ json.profileImage url_for(post.user.photo)
 json.comments post.comments.each do |comment|
   json.partial! '/api/comments/comment', comment: comment
 end 
+
+json.likes post.likes.each do |like|
+  json.partial! '/api/likes/index', like: like
+end 
