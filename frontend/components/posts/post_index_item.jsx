@@ -30,17 +30,13 @@ class PostIndexItem extends React.Component {
   };
 
   render() {
-    console.log("props", this)
-
     let post = this.props;
-    let postComments = Object.values(this.props.post.comments).map(comment => {
+    // console.log("test", post)
+
+    let postComments = this.props.post.comments.map(comment => {
       return (
-        <div key={comment.id}>
-          <Link to={`/users/${comment.user_id}`}>
-            {comment.author}
-          </Link>
-          <span>&nbsp;{comment.body}</span>
-        </div>
+        comment.author,
+        comment.body
       );
     });
 
@@ -74,6 +70,8 @@ class PostIndexItem extends React.Component {
         <div className="comments-container">
           <div className="post-caption">
             <p>{post.caption}</p>
+            <br></br>
+            <p>{postComments[postComments.length - 1]}</p>
           </div>
         </div>
         <form className="comment-field">

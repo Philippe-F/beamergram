@@ -15,9 +15,14 @@ class Post < ApplicationRecord
   has_one_attached :photo,
   dependent: :destroy
 
-  belongs_to :user
+  belongs_to :user,
+  foreign_key: :user_id,
+  primary_key: :id,
+  class_name: :User
 
   has_many :comments,
+  foreign_key: :post_id,
+  primary_key: :id,
   dependent: :destroy
 
 end
