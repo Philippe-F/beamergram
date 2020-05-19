@@ -1,6 +1,6 @@
 
 import * as LikeAPIUtil from "../utils/like_util";
-import { fetchPost } from "./post_actions";
+import { showPost } from "./post_actions";
 
 export const RECEIVE_LIKE = "RECEIVE_LIKE";
 export const REMOVE_LIKE = "REMOVE_LIKE";
@@ -17,7 +17,7 @@ const removeLike = like => ({
 
 export const createLike = like => dispatch => {
   return LikeAPIUtil.createLike(like).then(like => {
-    return dispatch(fetchPost(like.post_id));
+    return dispatch(showPost(like.post_id));
   });
 };
 export const deleteLike = postId => dispatch =>
