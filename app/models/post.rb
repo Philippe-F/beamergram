@@ -25,6 +25,12 @@ class Post < ApplicationRecord
   primary_key: :id,
   dependent: :destroy
 
+  has_many :likes,
+  foreign_key: :post_id,
+  primary_key: :id,
+  class_name: :Like,
+  dependent: :destroy
+
 end
 
 
