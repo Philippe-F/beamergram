@@ -31,12 +31,15 @@ class PostIndexItem extends React.Component {
 
   render() {
     let post = this.props;
-    // console.log("test", post)
 
     let postComments = this.props.post.comments.map(comment => {
       return (
-        comment.author,
-        comment.body
+        <div className="comment-div">
+          <Link className="profile-link" to={`/users/${comment.user_id}`}>
+            {comment.author}
+          </Link>
+          <span className="comment-body">&nbsp;{comment.body}</span>
+        </div>
       );
     });
 
@@ -69,9 +72,8 @@ class PostIndexItem extends React.Component {
         </div>
         <div className="comments-container">
           <div className="post-caption">
-            <p>{post.caption}</p>
-            <br></br>
-            <p>{postComments[postComments.length - 1]}</p>
+            <span>{post.caption}</span>
+            <div>{postComments[postComments.length - 1]}</div>
           </div>
         </div>
         <form className="comment-field">

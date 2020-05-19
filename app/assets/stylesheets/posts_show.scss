@@ -117,7 +117,16 @@ a {
 
 .post-caption {
   display: flex;
+  flex-direction: column;;
   padding-top: 5px;
+}
+
+.profile-link {
+  font-weight: bold;
+}
+
+.comment-div {
+  margin-left: 10px;
 }
 
 .comment-field {
