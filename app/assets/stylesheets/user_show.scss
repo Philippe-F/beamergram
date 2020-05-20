@@ -97,3 +97,26 @@
 .image-container {
   position: relative;
 }
+///////////////////////////////////////
+
+.user-photos-div {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 250px;
+  margin-right: 200px;
+}
+
+.post-image-div {
+  margin: 5px;
+}
+
+.user-show-root {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.user-dets {
+  display: flex;
+  justify-content: space-evenly;
+}

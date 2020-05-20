@@ -65,6 +65,16 @@ class UserShow extends React.Component {
       return <h2>Hold Up, Wait A Minute...</h2>;
     }
 
+    let userPhotos = this.props.userPosts.map(post => {
+      return (
+        <a href={`#/posts/${post.id}/show`} key={post.id}>
+          <div className="post-image-div">
+            <img src={post.photoUrl} width="250" height="250" />
+          </div>
+        </a>
+      );
+    });
+
     const {
       followerIds,
       followingIds,
@@ -74,7 +84,7 @@ class UserShow extends React.Component {
     } = this.props.userProfile;
 
     return (
-      <div>
+      <div className="user-show-root">
         <div className="profile-webpage">
           <NavbarContainer />
           <div className="profile-left"></div>
@@ -130,9 +140,23 @@ class UserShow extends React.Component {
                     </div>
                     )}
                 </div>
+                <div className="user-dets">
+                  <div>
+                    <strong>{this.props.userPosts.length} Posts</strong>
+                  </div>
+                  <div>
+                    <strong>{this.props.followerIds.length} Followers</strong>
+                  </div>
+                  <div>
+                    <strong>{this.props.userProfile.followingIds.length} Following</strong>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+        <div className="user-photos-div">
+          {userPhotos}
         </div>
       </div>
     )
