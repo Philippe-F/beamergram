@@ -5,7 +5,47 @@ import NavbarContainer from "../navbar/navbar_container";
 class PostShow extends React.Component {
   constructor(props) {
     super(props);
+    this.handleComment = this.handleComment.bind(this); 
+    this.handleLike = this.handleLike.bind(this);
+    this.isLiked = this.isLiked.bind(this);
+    this.state = {
+      body: ""
+    };
   }
+
+  handleComment(event) {
+    event.preventDefault();
+
+    if (this.state.body !== "") {
+      const comment = { body: this.state.body, post_id: this.props.post.id };
+      this.props.createComment(comment).then(() => {
+        this.props.showPost(this.props.post.id);
+      });
+      this.setState({ body: "" });
+    }
+  };
+
+  update(field) {
+    return event => {
+      this.setState({ [field]: event.target.value });
+    };
+  };
+
+  isLiked() {
+    const posts = this.props.post.likes;
+
+    let mapped = posts.map(ele => {
+      return ele.user_id;
+    })
+
+    return mapped;
+  };
+
+  handleLike(event) {
+    event.preventDefault();
+    this.props.createLike({ post_id: this.props.post.id })
+      .then(() => this.props.showPost(this.props.post.id));
+  };
 
   componentDidMount() {
     this.props.showPost(this.props.match.params.postId);
@@ -14,49 +54,53 @@ class PostShow extends React.Component {
   render() {
     const { post } = this.props;
     if (!post) return null;
+
+    const comments = post.comments.slice(Math.max(post.comments.length - 7, 0)).map(comment => {
+      return (
+        <ul key={comment.id} className="comment-list">
+          <strong>{comment.author}</strong><li className="comment-item">{comment.body}</li>
+        </ul>
+      )
+    })
     return (
       <div className="webpage">
         <div className="feed">
           <NavbarContainer />
-          <div className="post-object">
-            <div className="post-header">
-              <div className="post-header-info">
-                <div className="profile-photo-container">
-
-                  <a href="#/">
-                    <img className="profileImage" src={window.profileImage} /> {/*CHANGE*/}
-                  </a>
-                </div>
-                <div className="user-info">
-                  <a href="#/">
-                    <div className="post-username">{post.username}</div>
-                  </a>
-                </div>
-              </div> 
-              <button className="show" onClick={this.props.delete}>Remove</button>
-              <Link to={`/posts/${post.id}/edit`}><img className="show" src={window.showIcon} /></Link>
+          <div className="post-box">
+            <div className="img-box">
+              <img src={post.photoUrl} width="500" height="500"/>
             </div>
-            <div className="photoUrl">
-              <img src={post.photoUrl} />
-            </div>
-
-            <div>
-              <div className="post-icons-container">
-                <img className="like-icon" src={window.likeIcon} />
-                <a href="#/">
-                  <img className="comment-icon" src={window.commentIcon} />
+            <div className="right-side">
+              <div className="user-info">
+                <a href={`#/users/${post.user_id}`}>
+                  <div className="post-header-info urn">
+                    <img className="profileImage pi" src={post.profileImage} />
+                    <div className="post-username pu">{post.username}</div>
+                  </div>
                 </a>
-                <div className="like-count">0 likes</div>
+                <div className="comments-box">
+                  <div className="comment-lis">{comments}</div>
+                </div>
+                <div className="like-box">
+                  <div className="post-icons-container pic">
+                    {this.isLiked().includes(this.props.currentUser.id) ? (
+                      <img className="like-icon" src={window.fullLikeIcon} onClick={this.handleLike} />
+                      ) : (
+                        <img className="like-icon" src={window.likeIcon} onClick={this.handleLike} />
+                      )
+                    }
+                    <div className="like-count">{this.props.post.likes.length} likes</div>
+                  </div>
+                  <form className="comment-field cf">
+                    <input className="show-com"
+                    type="textarea"
+                      placeholder="Add a Comment..."
+                      value={this.state.body}
+                      onChange={this.update("body")} />
+                    <button onClick={this.handleComment}>Post</button>
+                  </form>
+                </div>
               </div>
-            </div>
-            <div className="comments-container">
-              <div className="post-caption">
-                <p>{post.caption}</p>
-              </div>
-            </div>
-            <div className="comment-field">
-              <input type="textarea" placeholder="Add a Comment..." />
-              <a>Post</a>
             </div>
           </div>
         </div>

@@ -1,3 +1,13 @@
+.webpage {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
 button {
   background: none;
 	color: inherit;
@@ -9,16 +19,6 @@ button {
 
 a {
   text-decoration: none;
-}
-
-.webpage {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
 }
 
 .feed {
@@ -155,4 +155,62 @@ a {
 
 .post-object {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.post-box {
+  display: flex;
+  border: 2px solid #d3d3d3d7;
+  height: 500px;
+}
+
+.right-side {
+  border-left: 1px solid #d3d3d3d7;
+}
+
+.urn {
+  border-bottom: 1px solid #d3d3d3d7;
+  width: inherit;
+  padding-bottom: 5px;
+}
+
+.pu {
+  margin-left: 5px;
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+.pi {
+  border: 1px solid #d3d3d3d7;
+  margin-left: 5px;
+}
+
+.comment-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: start;
+  padding: 0px;
+  margin-left: 20px;
+}
+
+.comment-item {
+  display: flex;
+  width: 230px;
+  margin-left: 5px;
+}
+
+.pic {
+  margin-top: 75px;
+}
+
+.comment-lis {
+  height: 220px;
+}
+
+.show-com {
+  background-color: transparent;
+  width: 75%;
+}
+
+input {
+  outline: none;
 }
