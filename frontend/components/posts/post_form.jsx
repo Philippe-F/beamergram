@@ -21,6 +21,7 @@ class PostForm extends React.Component {
 
     // handleSubmit is called on the window so we must bind
     event.preventDefault();
+
   };
 
   handleFile(e) {
@@ -40,7 +41,7 @@ class PostForm extends React.Component {
     // create a new formData object
     if (this.props.postId) {
       this.props.action(this.state, this.props.postId)
-      .then(this.props.history.push("/posts/explore"))
+      // .then(this.props.history.push("/posts/explore"))
     } else {
       const formData = new FormData();
       // append data into the formData object
@@ -48,6 +49,7 @@ class PostForm extends React.Component {
       formData.append("post[photo]", this.state.photoFile);
       this.props.action(formData)
     }
+    this.props.history.push("/posts/explore")
   };
 
   handleCancel(event) {
