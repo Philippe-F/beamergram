@@ -72,12 +72,20 @@ class PostShow extends React.Component {
             </div>
             <div className="right-side">
               <div className="user-info">
-                <a href={`#/users/${post.user_id}`}>
-                  <div className="post-header-info urn">
+               
+                <div className="post-header-info urn">
+                  <a href={`#/users/${post.user_id}`} className="click-username">
                     <img className="profileImage pi" src={post.profileImage} />
                     <div className="post-username pu">{post.username}</div>
-                  </div>
-                </a>
+                  </a>
+                  { post.user_id === this.props.currentUser.id ? (
+                   <a href={`#/posts/${post.id}/edit`} className="post-show-edit">Edit Post</a>
+                    ) : (
+                      null
+                    )
+                  }
+                </div>
+                
                 <div className="comments-box">
                   <div className="comment-lis">{comments}</div>
                 </div>

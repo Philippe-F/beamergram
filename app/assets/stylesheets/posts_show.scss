@@ -54,6 +54,7 @@ a {
 
 .post-header-info {
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
 }
 
@@ -173,6 +174,10 @@ a {
   padding-bottom: 5px;
 }
 
+.click-username {
+  display: flex;
+}
+
 .pu {
   margin-left: 5px;
   margin-top: 5px;
@@ -213,4 +218,12 @@ a {
 
 input {
   outline: none;
+}
+
+.post-show-edit {
+  color: #459cee;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  margin-right: 10px;
+  margin-top: 5px;
 }
