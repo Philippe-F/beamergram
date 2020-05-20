@@ -41,6 +41,10 @@ class Api::PostsController < ApplicationController
     @post.destroy
   end 
 
+  def user_posts 
+    @posts = Post.where(user_id: params[:id])
+    render :index
+  end
 
   private 
   def post_params

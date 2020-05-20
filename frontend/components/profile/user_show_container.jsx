@@ -3,6 +3,7 @@ import { fetchUser, deleteUser } from "../../actions/user_actions";
 import { logout } from "../../actions/session_action";
 import { createFollow, deleteFollow } from "../../actions/follow_actions";
 import UserShow from "./user_show";
+import { fetchUserPosts } from "../../actions/post_actions"; 
 
 const mapStateToProps = (state, ownProps) => {
   const profileId = ownProps.match.params.userId;
@@ -38,6 +39,7 @@ const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),
   createFollow: follow => dispatch(createFollow(follow)),
   deleteFollow: follow => dispatch(deleteFollow(follow)),
+  fetchUserPosts: id => dispatch(fetchUserPosts(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserShow);

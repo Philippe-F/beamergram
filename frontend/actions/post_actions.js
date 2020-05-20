@@ -77,3 +77,9 @@ export const destroyPost = (postId) => (dispatch) => (
   }
   )
 );
+
+export const fetchUserPosts = (userId) => (dispatch) => (
+  PostAPIUtil.fetchUserPosts(userId).then(posts =>
+    dispatch(receiveAllPosts(posts))
+  )
+);

@@ -20,6 +20,13 @@ export const createPost = (post) => {
   })
 };
 
+export const fetchUserPosts = (id) => (
+  $.ajax({
+    method: "GET",
+    url: `/api/users/posts/${id}`,
+  })
+);
+
 export const showPost = (postId) => (
   $.ajax({
     method: "GET",

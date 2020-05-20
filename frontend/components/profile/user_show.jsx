@@ -14,10 +14,12 @@ class UserShow extends React.Component {
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
     this.handleNewPost = this.handleNewPost.bind(this);
+    this.fetchUserPosts = this.props.fetchUserPosts.bind(this); 
   }
 
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
+    this.fetchUserPosts(this.props.match.params.userId);
   }
 
   componentDidUpdate(prevProps) {
@@ -57,8 +59,10 @@ class UserShow extends React.Component {
   }
 
   render() {
+    console.log("props", this.props)
+
     if (!this.props.userProfile) {
-      return <h2>User Does Not Exist</h2>;
+      return <h2>Hold Up, Wait A Minute...</h2>;
     }
 
     const {
