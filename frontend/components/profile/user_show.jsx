@@ -59,8 +59,6 @@ class UserShow extends React.Component {
   }
 
   render() {
-    console.log("props", this.props)
-
     if (!this.props.userProfile) {
       return <h2>Hold Up, Wait A Minute...</h2>;
     }
