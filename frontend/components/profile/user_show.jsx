@@ -25,6 +25,7 @@ class UserShow extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
       this.props.fetchUser(this.props.match.params.userId);
+      this.fetchUserPosts(this.props.match.params.userId);
     }
   }
 
