@@ -27,6 +27,7 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     primary_key: :id,
     class_name: :Post
+    dependent: :destroy
 
     has_many :active_follows,  
     foreign_key: :user_id,
