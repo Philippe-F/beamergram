@@ -7,8 +7,8 @@ class PostForm extends React.Component {
     this.state = this.props.post;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
-    this.handleFileSubmit = this.handleFileSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
+    this.errors = this.errors.bind(this);
   }
 
   update(field) {
@@ -21,7 +21,15 @@ class PostForm extends React.Component {
 
     // handleSubmit is called on the window so we must bind
     event.preventDefault();
+    if (this.state.caption && this.state.photoUrl) {
+      const formData = new FormData();
+      formData.append("post[caption]", this.state.caption);
+      formData.append("post[photo]", this.state.photoFile);
 
+      this.props.action(formData).then(() => {
+        this.props.history.push(`/users/${this.props.currentUser.id}`);
+      });
+    } 
   };
 
   handleFile(e) {
@@ -36,29 +44,18 @@ class PostForm extends React.Component {
     }
   };
 
-  handleFileSubmit(e) {
-    e.preventDefault();
-    // create a new formData object
-    if (this.props.postId) {
-      this.props.action(this.state, this.props.postId)
-      // .then(this.props.history.push("/posts/explore"))
-    } else {
-      const formData = new FormData();
-      // append data into the formData object
-      formData.append("post[caption]", this.state.caption);
-      formData.append("post[photo]", this.state.photoFile);
-      this.props.action(formData)
-    }
-    this.props.history.push("/posts/explore")
-  };
-
   handleCancel(event) {
     event.preventDefault();
     this.props.history.push(`/users/${this.props.currentUser.id}`);
   }
 
-  render() {
+  errors() {
+    if (!this.state.caption || !this.state.photoUrl) {
+      return <span className="no-file">Image and Caption Required</span>;
+    }
+  }
 
+  render() {
     let imagePreview;
 
     if (this.state.photoUrl) {
@@ -88,7 +85,11 @@ class PostForm extends React.Component {
           <div className="create-form-header">
             <h2 className="new-post-header">Upload an Image</h2>
             <div>
-              <form onSubmit={this.handleFileSubmit}>
+              <form onSubmit={this.handleSubmit}>
+                <div className="errors-container">
+                  <ul className="login-errors">{this.errors()}</ul>
+                </div>
+
                 { this.props.formType === "Create Post" ?
                 <div>
                   <input className="new-file" type="file" onChange={this.handleFile} />

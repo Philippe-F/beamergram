@@ -1,4 +1,8 @@
 
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .new-post-header {
   display: block;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -47,4 +51,10 @@
 .can:hover {
   background-color: rgb(194, 138, 138);
   cursor: pointer;
+}
+
+.no-file {
+  font-size: 20px;
+  color: #3897f0;
+  font-weight: bold;
 }
