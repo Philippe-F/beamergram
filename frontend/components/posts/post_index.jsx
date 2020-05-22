@@ -22,7 +22,6 @@ class PostIndex extends React.Component {
     this.props.history.push("/posts/explore");
   }
 
-
   render() {
     if (this.props.posts.length === 0) return null
     
@@ -38,15 +37,15 @@ class PostIndex extends React.Component {
       )
     })
 
-    function shuffle(arr) {
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-      return arr;
-    }
+    // function shuffle(arr) {
+    //   for (let i = arr.length - 1; i > 0; i--) {
+    //     const j = Math.floor(Math.random() * (i + 1));
+    //     [arr[i], arr[j]] = [arr[j], arr[i]];
+    //   }
+    //   return arr;
+    // }
 
-    const shuffled = shuffle(posts); 
+    // const shuffled = shuffle(posts); 
 
     return (
       <>
@@ -55,7 +54,7 @@ class PostIndex extends React.Component {
           <NavbarContainer />
         </div>
         <ul>
-          {shuffled}
+          {posts}
         </ul>
       </div>
       </>
