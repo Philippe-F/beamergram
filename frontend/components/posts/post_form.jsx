@@ -1,5 +1,6 @@
 import React from "react";
 import NavbarContainer from "../navbar/navbar_container"; 
+import { withRouter } from "react-router";
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class PostForm extends React.Component {
     this.handleFile = this.handleFile.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     this.errors = this.errors.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   update(field) {
@@ -21,7 +23,10 @@ class PostForm extends React.Component {
 
     // handleSubmit is called on the window so we must bind
     event.preventDefault();
-    if (this.state.caption && this.state.photoUrl) {
+    if (this.props.formType === "Update Post") {
+      this.props.action(this.state, this.props.postId);
+      this.props.history.push(`/users/${this.props.currentUser.id}`);
+    } else if (this.state.caption && this.state.photoUrl) {
       const formData = new FormData();
       formData.append("post[caption]", this.state.caption);
       formData.append("post[photo]", this.state.photoFile);
@@ -29,7 +34,7 @@ class PostForm extends React.Component {
       this.props.action(formData).then(() => {
         this.props.history.push(`/users/${this.props.currentUser.id}`);
       });
-    } 
+    }
   };
 
   handleFile(e) {
@@ -55,7 +60,15 @@ class PostForm extends React.Component {
     }
   }
 
+  handleDelete(event) {
+    event.preventDefault();
+    this.props.deletePost(this.state.id);
+    this.props.history.push(`/users/${this.props.currentUser.id}`);
+  }
+
   render() {
+    console.log("state", this.state)
+    console.log("props", this.props)
     let imagePreview;
 
     if (this.state.photoUrl) {
@@ -84,6 +97,9 @@ class PostForm extends React.Component {
         <div className="new-post-object">
           <div className="create-form-header">
             <h2 className="new-post-header">Upload an Image</h2>
+            <button className="post-delete-btn" onClick={this.handleDelete}>
+              Delete Post
+            </button>
             <div>
               <form onSubmit={this.handleSubmit}>
                 <div className="errors-container">
@@ -121,4 +137,4 @@ class PostForm extends React.Component {
   }
 }
 
-export default PostForm;
+export default withRouter(PostForm);
