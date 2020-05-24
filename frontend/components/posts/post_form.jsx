@@ -97,9 +97,11 @@ class PostForm extends React.Component {
         <div className="new-post-object">
           <div className="create-form-header">
             <h2 className="new-post-header">Upload an Image</h2>
-            <button className="post-delete-btn" onClick={this.handleDelete}>
-              Delete Post
-            </button>
+            { this.props.formType === "Update Post" ? 
+              <button className="post-delete-btn" onClick={this.handleDelete}>
+                Delete Post
+              </button> : null
+            }
             <div>
               <form onSubmit={this.handleSubmit}>
                 <div className="errors-container">

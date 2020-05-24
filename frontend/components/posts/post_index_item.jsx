@@ -79,7 +79,7 @@ class PostIndexItem extends React.Component {
         </div>
         <a href={`#/posts/${post.post.id}/show`}>
           <div className="photoUrl">
-            <img src={post.photoUrl} width="500" height="500" />
+            <img src={post.photoUrl} width="500" />
           </div>
         </a>
         <div className="post-icons-container">

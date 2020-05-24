@@ -68,7 +68,7 @@ class PostShow extends React.Component {
           <NavbarContainer />
           <div className="post-box">
             <div className="img-box">
-              <img src={post.photoUrl} width="500" height="500"/>
+              <img src={post.photoUrl} width="500" height="100%"/>
             </div>
             <div className="right-side">
               <div className="user-info">
