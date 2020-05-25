@@ -8,7 +8,7 @@ export default (state = [], action) => {
 
   switch(action.type) {
     case RECEIVE_POST_ERRORS:
-      return action.errors;
+      return state;
     case RECEIVE_ALL_POSTS:
       return [];
     case RECEIVE_POST:

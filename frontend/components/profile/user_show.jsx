@@ -61,7 +61,11 @@ class UserShow extends React.Component {
 
   render() {
     if (!this.props.userProfile) {
-      return <h2>Hold Up, Wait A Minute...</h2>;
+      return (
+        <div>
+          <h2>User Does Not Exist</h2>
+        </div>
+      )
     }
 
     let userPhotos = this.props.userPosts.map(post => {

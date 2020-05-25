@@ -53,8 +53,13 @@ class PostShow extends React.Component {
 
   render() {
     const { post } = this.props;
-    if (!post) return null;
-
+    if (!post) {
+      return (
+        <div>
+          <h2>Post Does Not Exist</h2>
+        </div>
+      )
+    }
     const comments = post.comments.slice(Math.max(post.comments.length - 7, 0)).map(comment => {
       return (
         <ul key={comment.id} className="comment-list">
