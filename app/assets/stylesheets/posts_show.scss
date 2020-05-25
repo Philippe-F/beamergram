@@ -170,8 +170,19 @@ a {
   width: 350px;
 }
 
+.img-box {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+.img-box-image {
+  width: 100%;
+  object-fit: cover;
+}
+
 .urn {
-  border-bottom: 1px solid #d3d3d3d7;
+  border-bottom: 1px solid #e9e8e8d7;
   width: inherit;
   padding-bottom: 5px;
 }

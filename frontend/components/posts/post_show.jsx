@@ -73,11 +73,10 @@ class PostShow extends React.Component {
           <NavbarContainer />
           <div className="post-box">
             <div className="img-box">
-              <img src={post.photoUrl} width="500" height="100%"/>
+              <img className="img-box-image" src={post.photoUrl} height="100%"/>
             </div>
             <div className="right-side">
               <div className="user-info">
-               
                 <div className="post-header-info urn">
                   <a href={`#/users/${post.user_id}`} className="click-username">
                     <img className="profileImage pi" src={post.profileImage} />
