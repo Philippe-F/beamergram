@@ -109,8 +109,8 @@ class PostForm extends React.Component {
                 </div>
 
                 { this.props.formType === "Create Post" ?
-                <div>
-                  <input className="new-file" type="file" onChange={this.handleFile} />
+                <div className="new-file">
+                  <input type="file" onChange={this.handleFile} />
                 </div> : null 
                 }
                 <div>
