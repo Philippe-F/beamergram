@@ -54,7 +54,7 @@ class PostIndex extends React.Component {
           <NavbarContainer />
         </div>
         <ul>
-          {posts}
+          {posts.reverse()}
         </ul>
       </div>
       </>
