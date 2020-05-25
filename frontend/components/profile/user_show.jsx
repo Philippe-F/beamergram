@@ -155,7 +155,7 @@ class UserShow extends React.Component {
           </div>
         </div>
         <div className="user-photos-div">
-          {userPhotos}
+          {userPhotos.reverse()}
         </div>
       </div>
     )
