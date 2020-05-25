@@ -67,8 +67,6 @@ class PostForm extends React.Component {
   }
 
   render() {
-    console.log("state", this.state)
-    console.log("props", this.props)
     let imagePreview;
 
     if (this.state.photoUrl) {
