@@ -28,6 +28,7 @@
 .profile-head-buttons {
   display: flex;
   justify-content: space-between;
+  padding-right: 60px;
 }
 
 .profile-container {
@@ -68,11 +69,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-.profile-username {
-  display: flex;
-  justify-content: space-around;
 }
 
 .profile-head-right {
