@@ -72,7 +72,7 @@ class UserShow extends React.Component {
       return (
         <a href={`#/posts/${post.id}/show`} key={post.id}>
           <div className="post-image-div">
-            <img src={post.photoUrl} width="250" height="250" />
+            <img className="post-image" src={post.photoUrl} width="250" height="250" />
           </div>
         </a>
       );

@@ -105,6 +105,10 @@
   margin: 5px;
 }
 
+.post-image {
+  object-fit: cover;
+}
+
 .user-show-root {
   display: flex;
   justify-content: center;
