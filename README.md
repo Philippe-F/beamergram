@@ -1,6 +1,6 @@
 # Beamergram
-  An Instagram clone for the BMW enthusiast community. Using a Rails backend in 
-  conjunction with a React frontend.
+    An Instagram clone for the BMW enthusiast community. Using a Rails backend in 
+    conjunction with a React frontend.
 
 # Live Site 
 ![profile page](https://github.com/Philippe-F/Beamergram/blob/master/app/assets/images/profile-page-image.png)
@@ -10,19 +10,19 @@
 ![show page](https://github.com/Philippe-F/Beamergram/blob/master/app/assets/images/show-page-image.png)
 
 # Team Member 
-  Philippe Fonzin
+    Philippe Fonzin
 
 # Technology
-  React 
-  Redux
-  Redux-Thunk
-  Rails 
-  Ruby
-  Ajax
-  Postgresql
-  Webpack
+    React 
+    Redux
+    Redux-Thunk
+    Rails 
+    Ruby
+    Ajax
+    Postgresql
+    Webpack
 
-  # Features
+# Features
     User Authentication - Log In / Sign Up/ Log Out
     User Profile 
       Edit Profile
