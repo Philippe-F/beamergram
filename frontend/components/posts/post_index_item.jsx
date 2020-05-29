@@ -89,7 +89,7 @@ class PostIndexItem extends React.Component {
             <img className="like-icon" src={window.likeIcon} onClick={this.handleLike} />
           )
           }
-          <div className="like-count">{this.props.post.likes.length} likes</div>
+          <div className="like-count">{this.props.post.likes.length} like</div>
         </div>
         <div className="comments-container">
           <div className="post-caption">
