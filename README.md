@@ -21,6 +21,7 @@
     Ajax
     Postgresql
     Webpack
+    AWS S3
 
 # Features
     User Authentication - Log In / Sign Up/ Log Out
