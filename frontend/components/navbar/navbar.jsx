@@ -30,7 +30,7 @@ class Navbar extends React.Component {
           <a href={`#/users/${this.props.currentUser.id}`}>
             <img className="profile" src={window.profileIcon} />
           </a>
-          <button onClick={this.props.logout}><img className="logout" src={window.settingsIcon} /></button>
+          <button onClick={this.props.logout}><img className="logout" src={window.logoutIcon} /></button>
         </div>
       </div>
     )
